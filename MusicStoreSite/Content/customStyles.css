@@ -1,8 +1,20 @@
-﻿.productFieldLabel {
-    float: left;
+﻿em {
+    color: #5E5B54;
+    font-weight: bold;
+    padding-top: 30px;
+    padding-bottom: 20px;
+    margin-bottom: 100px;
+}
+
+.productFields em {
+    color: #5E5B54;
+}
+.productFields {
+    font-weight: bold;
 }
 
 .thumbnail {
-    display:block;
+    display: block;
     width: auto;
+    margin-bottom: 5px;
 }
