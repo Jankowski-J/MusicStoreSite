@@ -19,7 +19,7 @@
                 </span>
             </div>
             <div>
-                @product.Title
+                @Html.ActionLink(product.Title, "ProductDetails", new { id = product.ProductId}) 
             </div>
         </td>
         if (i%5 == 4)
