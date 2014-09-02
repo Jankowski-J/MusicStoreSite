@@ -19,6 +19,7 @@ namespace MusicStoreSite
                         "~/Scripts/jquery.validate*"));
 
             bundles.Add(new ScriptBundle("~/bundles/bootstrap").Include(
+                        "~/Scripts/offcanvas.js",
                         "~/Scripts/bootstrap.js"));
 
             // Use the development version of Modernizr to develop with and learn from. Then, when you're
@@ -28,8 +29,7 @@ namespace MusicStoreSite
 
             bundles.Add(new StyleBundle("~/Content/css").Include("~/Content/site.css"));
 
-            bundles.Add(new StyleBundle("~/Content/bootstrapcss").Include("~/Content/bootstrap.css",
-                        "~/Content/bootstrap-responsive.css"));
+            bundles.Add(new StyleBundle("~/Content/bootstrapcss").Include("~/Content/bootstrap.css", "~/Content/offcanvas.css"));
 
             bundles.Add(new StyleBundle("~/Content/themes/base/css").Include(
                         "~/Content/themes/base/jquery.ui.core.css",

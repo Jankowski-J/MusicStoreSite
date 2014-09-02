@@ -5,7 +5,7 @@ using System.Web;
 
 namespace MusicStoreSite.Models.Entities
 {
-    class Product
+    public class Product
     {
         public int ProductId { set; get; }
         public string Artist { set; get; }
