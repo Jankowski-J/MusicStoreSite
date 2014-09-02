@@ -7,14 +7,16 @@
 }
 
 .productFields em {
-    color: #5E5B54;
+    color: #AB8224;
 }
+
 .productFields {
+    color: #5E5B54;
     font-weight: bold;
 }
 
 .thumbnail {
     display: block;
     width: auto;
-    margin-bottom: 5px;
+    margin: 10px;
 }
