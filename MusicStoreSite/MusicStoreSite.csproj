@@ -183,13 +183,18 @@
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\StoreController.cs" />
     <Compile Include="Filters\InitializeSimpleMembershipAttribute.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\Abstract\IProductRepository.cs" />
     <Compile Include="Models\AccountModels.cs" />
+<<<<<<< HEAD
     <Compile Include="Models\Concrete\ProductRepo.cs" />
+=======
+    <Compile Include="Models\Contexts\MusicStoreContext.cs" />
+>>>>>>> b9ff0eb9598c8e3fe5ef731dfca00b363aa6184e
     <Compile Include="Models\Entities\Product.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -200,7 +205,12 @@
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+<<<<<<< HEAD
     <Content Include="Content\offcanvas.css" />
+=======
+    <Content Include="Content\customStyles.css" />
+    <Content Include="Content\Images\placeholder.gif" />
+>>>>>>> b9ff0eb9598c8e3fe5ef731dfca00b363aa6184e
     <Content Include="Content\themes\base\images\ui-bg_flat_0_aaaaaa_40x100.png" />
     <Content Include="Content\themes\base\images\ui-bg_flat_75_ffffff_40x100.png" />
     <Content Include="Content\themes\base\images\ui-bg_glass_55_fbf9ee_1x400.png" />
@@ -321,6 +331,8 @@
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Views\Web.config" />
     <Content Include="Views\Shared\_MyLayout.cshtml" />
+    <Content Include="Views\Store\ProductDetails.cshtml" />
+    <Content Include="Views\Store\Browse.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

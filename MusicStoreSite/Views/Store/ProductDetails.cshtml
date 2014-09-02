@@ -1,0 +1,24 @@
+﻿@using MusicStoreSite.Models.Entities
+@model Product
+
+<h2>@Model.Title </h2>
+
+<div>
+    <p>
+        <img class='thumbnail' src="@Url.Content("~/Content/Images/placeholder.gif")" alt="Image" />
+    </p>
+</div>
+<div class="productFields">
+    <p>
+        <em class="productFieldLabel">Genre:  </em>
+        @Model.Genre
+    </p>
+    <p>
+        <em class="productFieldLabel">Artist: </em>
+        @Model.Artist
+    </p>
+    <p>
+        <em class="productFieldLabel">Price: </em>
+        @Model.Price
+    </p>
+</div>
