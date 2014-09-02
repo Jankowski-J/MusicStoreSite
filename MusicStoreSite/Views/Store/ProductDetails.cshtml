@@ -1,25 +1,24 @@
 ﻿@using MusicStoreSite.Models.Entities
 @model Product
 
-@{
-    ViewBag.Title = "ProductDetails";
-}
+<h2>@Model.Title </h2>
 
-<h2>ProductDetails</h2>
 <div>
-    <span class="thumbnail">
-        <img src="@Url.Content("~/Content/Images/placeholder.gif")" alt="Image" />
-    </span>
+    <p>
+        <img class='thumbnail' src="@Url.Content("~/Content/Images/placeholder.gif")" alt="Image" />
+    </p>
 </div>
-<div>
-    <span class="productFieldLabel">Genre: </span>
-    @Html.LabelFor(model => model.Genre, Model.Genre)
-</div>
-<div>
-    <span class="productFieldLabel">Artist: </span>
-    @Html.LabelFor(model => model.Artist, Model.Artist)
-</div>
-<div>
-    <span class="productFieldLabel">Price: </span>
-    @Html.LabelFor(model => model.Price, Model.Price.ToString())
+<div class="productFields">
+    <p>
+        <em class="productFieldLabel">Genre:  </em>
+        @Model.Genre
+    </p>
+    <p>
+        <em class="productFieldLabel">Artist: </em>
+        @Model.Artist
+    </p>
+    <p>
+        <em class="productFieldLabel">Price: </em>
+        @Model.Price
+    </p>
 </div>
