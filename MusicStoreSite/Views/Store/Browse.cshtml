@@ -1,0 +1,32 @@
+﻿@model List<MusicStoreSite.Models.Entities.Product>
+
+@{
+    int i = 0;
+}
+
+<div>
+    <table>
+    @foreach (var product in Model)
+    {
+        if (i%5 == 0)
+        {
+            @:<tr>
+        }
+        <td>
+            <div>
+                <span class="thumbnail">
+                    <img src="@Url.Content("~/Content/Images/placeholder.gif")" alt="Image" />
+                </span>
+            </div>
+            <div>
+                @product.Title
+            </div>
+        </td>
+        if (i%5 == 4)
+        {
+            @:</tr>
+        }
+        i++;
+    }
+    </table>
+</div>

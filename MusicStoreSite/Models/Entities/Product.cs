@@ -17,9 +17,12 @@ namespace MusicStoreSite.Models.Entities
         public string Genre { get; set; }
         [Required()]
         public decimal Price { get; set; }
+        [Required()]
+        public DateTime AddedAt { get; set; }
 
         public Product()
         {
+            AddedAt = DateTime.Now;
         }
     }
 }

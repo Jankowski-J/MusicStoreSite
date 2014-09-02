@@ -29,7 +29,8 @@ namespace MusicStoreSite
             bundles.Add(new StyleBundle("~/Content/css").Include("~/Content/site.css"));
 
             bundles.Add(new StyleBundle("~/Content/bootstrapcss").Include("~/Content/bootstrap.css",
-                        "~/Content/bootstrap-responsive.css"));
+                        "~/Content/bootstrap-responsive.css",
+                        "~/Content/customStyles.css"));
 
             bundles.Add(new StyleBundle("~/Content/themes/base/css").Include(
                         "~/Content/themes/base/jquery.ui.core.css",

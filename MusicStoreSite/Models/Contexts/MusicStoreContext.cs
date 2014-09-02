@@ -10,5 +10,7 @@ namespace MusicStoreSite.Models.Contexts
     public class MusicStoreContext : DbContext
     {
         public DbSet<Product> Products { get; set; }
+
+        
     }
 }
