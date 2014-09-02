@@ -9,6 +9,11 @@ namespace MusicStoreSite.Models.Contexts
 {
     public class MusicStoreContext : DbContext
     {
+        public MusicStoreContext()
+            : base("DefaultConnection")
+        {
+        }
+
         public DbSet<Product> Products { get; set; }
 
         

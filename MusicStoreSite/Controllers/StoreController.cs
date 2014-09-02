@@ -18,6 +18,11 @@ namespace MusicStoreSite.Controllers
 
         public ActionResult Index()
         {
+            return View();
+        }
+
+        public ActionResult AddToDb()
+        {
             var tempProduct = new Product { Artist = "Bla", Genre = "Metal", Price = 9.99M, Title = "Badum" };
             musicStoreContext.Products.Add(tempProduct);
             tempProduct = new Product { Artist = "Blaasd", Genre = "Metal", Price = 19.99M, Title = "Basm" };
