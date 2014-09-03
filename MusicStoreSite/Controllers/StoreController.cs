@@ -16,11 +16,6 @@ namespace MusicStoreSite.Controllers
 
         private MusicStoreContext musicStoreContext = new MusicStoreContext();
 
-        public ActionResult Index()
-        {
-            return View();
-        }
-
         public ActionResult AddToDb()
         {
             var tempProduct = new Product { Artist = "Bla", Genre = "Metal", Price = 9.99M, Title = "Badum" };
@@ -39,6 +34,12 @@ namespace MusicStoreSite.Controllers
             musicStoreContext.Products.Add(tempProduct);
             musicStoreContext.SaveChanges();
             return View("Browse");
+        }
+
+        public ViewResult Index()
+        {
+            var newProducts = musicStoreContext.Products.OrderBy(x => x.AddedAt).Take(5).AsEnumerable();
+            return View(newProducts);
         }
 
         public ActionResult ProductDetails(int id = 0)

@@ -1,0 +1,42 @@
+﻿@model IEnumerable<MusicStoreSite.Models.Entities.Product>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<div>
+    <img class='thumbnail' src="@Url.Content("~/Content/Images/new-products.jpg")" alt="Image" />
+</div>
+
+@if (@Model.Count() == 0)
+{
+    <b>Sorry, we currently have no products.</b>
+}
+else
+{
+@*<table class="table">
+        <tr>
+            @foreach (var product in @Model)
+            {
+                <td class="col-sm-1">
+                    <img class='thumbnail' src="@Url.Content("~/Content/Images/placeholder.gif")" alt="Image" />
+                    @Html.ActionLink(product.Title, "ProductDetails", new { id = product.ProductId })
+                </td>
+            }
+
+        </tr>
+    </table>*@
+    
+    <div class="row newProducts">
+        <h2>Fresh of the grill</h2>
+        @foreach (var product in @Model)
+        {
+            <div class="col-md-2 product">
+                <img class='thumbnail' src="@Url.Content("~/Content/Images/placeholder.gif")" alt="Image" />
+                @Html.ActionLink(product.Title, "ProductDetails", new { id = product.ProductId })
+            </div>
+        }
+
+
+    </div>
+}
