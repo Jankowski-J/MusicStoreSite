@@ -1,0 +1,51 @@
+﻿@model MusicStoreSite.Models.Entities.Product
+
+@{
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>Product</legend>
+
+    <h3>
+         @Html.DisplayNameFor(model => model.Artist)
+    </h3>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Artist)
+    </div>
+
+    <h3>
+         @Html.DisplayNameFor(model => model.Title)
+    </h3>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Title)
+    </div>
+
+    <h3>
+         @Html.DisplayNameFor(model => model.Genre)
+    </h3>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Genre)
+    </div>
+
+    <h3>
+         @Html.DisplayNameFor(model => model.Price)
+    </h3>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Price)
+    </div>
+
+    <h3>
+         @Html.DisplayNameFor(model => model.AddedAt)
+    </h3>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.AddedAt)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id=Model.ProductId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
