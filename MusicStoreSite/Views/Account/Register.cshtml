@@ -4,32 +4,42 @@
 }
 
 <hgroup class="title">
-    <h1>@ViewBag.Title.</h1>
     <h2>Create a new account.</h2>
+    Use the form below to create an account
 </hgroup>
 
-@using (Html.BeginForm()) {
+@using (Html.BeginForm())
+{
     @Html.AntiForgeryToken()
     @Html.ValidationSummary()
-
     <fieldset>
-        <legend>Registration Form</legend>
+       
+        <legend>Account Information</legend>
         <ol>
             <li>
                 @Html.LabelFor(m => m.UserName)
+                <br />
                 @Html.TextBoxFor(m => m.UserName)
             </li>
             <li>
+                @Html.LabelFor(m => m.Email)
+                  <br />
+                @Html.TextBoxFor(m => m.Email)
+            </li>
+            <li>
                 @Html.LabelFor(m => m.Password)
+                <br />
                 @Html.PasswordFor(m => m.Password)
             </li>
             <li>
                 @Html.LabelFor(m => m.ConfirmPassword)
+                <br />
                 @Html.PasswordFor(m => m.ConfirmPassword)
             </li>
         </ol>
         <input type="submit" value="Register" />
     </fieldset>
+        
 }
 
 @section Scripts {
