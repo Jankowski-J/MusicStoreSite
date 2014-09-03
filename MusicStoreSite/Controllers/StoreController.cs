@@ -18,7 +18,7 @@ namespace MusicStoreSite.Controllers
 
         public ViewResult Index()
         {
-            var newProducts = musicStoreContext.Products.OrderBy(x => x.AddedAt).Take(5).AsEnumerable();
+            var newProducts = musicStoreContext.Products.OrderByDescending(x => x.AddedAt).Take(5).AsEnumerable();
             return View(newProducts);
         }
 
