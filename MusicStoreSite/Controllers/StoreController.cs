@@ -54,5 +54,11 @@ namespace MusicStoreSite.Controllers
 
             return View(browseResults);
         }
+
+        public ActionResult AddProductDialog()
+        {
+            //add
+            return PartialView();
+        }
     }
 }

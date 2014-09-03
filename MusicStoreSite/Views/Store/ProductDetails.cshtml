@@ -21,4 +21,13 @@
         <em class="productFieldLabel">Price: </em>
         @Model.Price
     </p>
+
 </div>
+
+<a href="#" data-toggle="modal" id="AddToShoppingCart" class="btn btn-lg btn-success">Add to Cart</a>
+<div id="modalContainer"></div>
+
+@section scripts {
+    <script src="~/Scripts/AddProductDialog.js"></script>
+}
+
