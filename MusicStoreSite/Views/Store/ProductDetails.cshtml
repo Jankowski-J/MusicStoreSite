@@ -26,6 +26,7 @@
 
 <a href="#" data-toggle="modal" id="AddToShoppingCart" class="btn btn-lg btn-success">Add to Cart</a>
 <div id="modalContainer"></div>
+@Html.Hidden("id",Model.ProductId, new{id = "htmlProductId"})
 
 @section scripts {
     <script src="~/Scripts/AddProductDialog.js"></script>

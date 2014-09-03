@@ -2,24 +2,25 @@
 
 Store.Product = (function() {
 
-    var getModal = function() {
+    var onModalReviewed = function(data) {
+        var $container = $("#modalContainer");
+        $container.html(data);
+        $container.find("#myModal").modal('show');
+    }
+
+    var getModal = function () {
+        console.log($("#htmlProductId").val());
         $.ajax({
             url: "/Store/AddProductDialog",
             type: "GET",
-            data: { poductId: 1 },
-            success: function (data) {
-                console.log(data);
-                var $container = $("#modalContainer");
-                $container.html(data);
-                $container.find("#myModal").modal('show');
-            }
+            data: { poductId: $("#htmlProductId").val() },
+            success: onModalReviewed
         });
     };
 
     $("#AddToShoppingCart").click(function (e) {
         e.preventDefault();
         getModal();
-
     });
 
     //$(function() {

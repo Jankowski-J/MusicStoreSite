@@ -45,13 +45,19 @@ namespace MusicStoreSite.Controllers
 
         public ActionResult AddProductDialog(int poductId)
         {
-            //add
+            var cart = GetCart();
+            ViewBag.Message= "ERROR";
+            var product = musicStoreContext.Products.Where(x => x.ProductId == poductId).FirstOrDefault();
+            if (product != null)
+            {
+                cart.AddItem(product);
+                ViewBag.Message = "Added";
+            }
 
-            int i;
             return PartialView();
         }
 
-        ShoppingCart GeCart()
+        ShoppingCart GetCart()
         {
             var cart = (ShoppingCart)Session["Cart"];
             if (cart == null)
