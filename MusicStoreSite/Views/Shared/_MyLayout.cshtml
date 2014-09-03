@@ -26,7 +26,7 @@
                 <li class="active">@Html.ActionLink("Home", "Index", "Store")</li>
                 <li class="active">@Html.ActionLink("Store", "Browse", "Store")</li>
                 <li class="active" id="cartMenu">@{ Html.RenderAction("CartMiniInfo", "Store"); }</li>
-                <li class="active">@Html.ActionLink("Admin", "Index", "Admin")</li>          
+                <li class="active">@Html.ActionLink("Admin", "Index", "Admin", new { area = "Panel" }, null)</li>          
             </ul>
         </div><!-- /.nav-collapse -->
       </div><!-- /.container -->
