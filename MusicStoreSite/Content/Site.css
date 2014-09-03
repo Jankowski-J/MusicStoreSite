@@ -39,7 +39,7 @@ div.newProducts div.product {
     width: 140px;
 }
 
-.table > tbody > tr > td {
+.table > tbody > tr > td, .table > tbody > tr > th {
     border: 0;
 }
 
