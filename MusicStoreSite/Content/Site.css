@@ -47,3 +47,7 @@ div.newProducts div.product {
     width: 120px;
     margin: 5px;
 }
+
+.loginFieldLabel {
+    min-width: 120px;
+}
