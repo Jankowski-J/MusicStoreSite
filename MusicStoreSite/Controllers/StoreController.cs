@@ -57,6 +57,11 @@ namespace MusicStoreSite.Controllers
             return PartialView();
         }
 
+        public ActionResult CartMiniInfo()
+        {
+            return PartialView(GetCart());
+        }
+
         ShoppingCart GetCart()
         {
             var cart = (ShoppingCart)Session["Cart"];
