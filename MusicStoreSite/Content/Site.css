@@ -48,6 +48,10 @@ div.newProducts div.product {
     margin: 5px;
 }
 
+.loginFieldLabel {
+    min-width: 120px;
+}
+
 .navbar-nav {
     float: right;
 }

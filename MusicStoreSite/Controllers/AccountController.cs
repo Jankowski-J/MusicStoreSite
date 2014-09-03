@@ -38,7 +38,8 @@ namespace MusicStoreSite.Controllers
         {
             if (ModelState.IsValid && WebSecurity.Login(model.UserName, model.Password, persistCookie: model.RememberMe))
             {
-                return RedirectToLocal(returnUrl);
+                return RedirectToAction("Browse", "Store");
+                //return RedirectToLocal(returnUrl);
             }
 
             // If we got this far, something failed, redisplay form

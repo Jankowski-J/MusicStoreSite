@@ -19,12 +19,11 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="#">Goyello Music Store</a>
+          <a class="navbar-brand" href="#">Project name</a>
         </div>
         <div class="collapse navbar-collapse">
           <ul class="nav navbar-nav">
-            <li class="active">@Html.ActionLink("Home", "Index", "Store")
-            <li class="active">@Html.ActionLink("Store", "Browse", "Store")
+            <li class="active">@Html.ActionLink("Home", "Index", "Store")</li>
             <li class="active">@Html.ActionLink("Admin", "Index", "Admin")</li>
           </ul>
         </div><!-- /.nav-collapse -->
@@ -35,17 +34,7 @@
     <div class="container">
 
       <div class="row row-offcanvas row-offcanvas-right">
-          <div class="col-xs-6 col-sm-3 sidebar-offcanvas" id="sidebar" role="navigation">
-          <div class="list-group">
-            @Html.Partial("CategoryList")
-          </div>
-        </div><!--/span-->
-        <div class="col-xs-12 col-sm-9">
-          <p class="pull-right visible-xs">
-            <button type="button" class="btn btn-primary btn-xs" data-toggle="offcanvas">Toggle nav</button>
-          </p>
           @RenderBody()
-                    </div><!--/span-->
 
       </div><!--/row-->
 
