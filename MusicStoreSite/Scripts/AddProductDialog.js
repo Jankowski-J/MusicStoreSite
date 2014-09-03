@@ -6,6 +6,7 @@ Store.Product = (function() {
         var $container = $("#modalContainer");
         $container.html(data);
         $container.find("#myModal").modal('show');
+        Menu.MiniCounter.Refresh();
     }
 
     var getModal = function () {
@@ -22,13 +23,4 @@ Store.Product = (function() {
         e.preventDefault();
         getModal();
     });
-
-    //$(function() {
-    //    $("#myModal").on('shown.bs.modal', function (e) {
-    //        console.log("modal show", e);
-    //    });
-    //});
-    //return {
-
-    //};
 })();
