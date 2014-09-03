@@ -3,9 +3,9 @@
 @{
     int i = 0;
 }
-
+<h2>@ViewBag.Category</h2>
 <div>
-    <table>
+    <table class="table" style="width: auto">
     @foreach (var product in Model)
     {
         if (i%5 == 0)
@@ -13,13 +13,14 @@
             @:<tr>
         }
         <td>
-            <div>
-                <span class="thumbnail">
-                    <img src="@Url.Content("~/Content/Images/placeholder.gif")" alt="Image" />
-                </span>
-            </div>
-            <div>
-                @Html.ActionLink(product.Title, "ProductDetails", new { id = product.ProductId}) 
+            <div class="browsedItem">
+                <img class="thumbnail" src="@Url.Content("~/Content/Images/placeholder.gif")" alt="Image" />
+                <span style="display: block; text-align: center">
+                    <a href="@Url.Action("ProductDetails", new { id = product.ProductId})">
+                              <b>@product.Artist</b><br/>
+                              <i>@product.Title</i>
+                    </a>
+                </span> 
             </div>
         </td>
         if (i%5 == 4)
