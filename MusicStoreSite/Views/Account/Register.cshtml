@@ -13,33 +13,30 @@
     @Html.AntiForgeryToken()
     @Html.ValidationSummary()
     <fieldset>
-       
+
         <legend>Account Information</legend>
-        <ol>
-            <li>
-                @Html.LabelFor(m => m.UserName)
-                <br />
-                @Html.TextBoxFor(m => m.UserName)
-            </li>
-            <li>
-                @Html.LabelFor(m => m.Email)
-                  <br />
-                @Html.TextBoxFor(m => m.Email)
-            </li>
-            <li>
-                @Html.LabelFor(m => m.Password)
-                <br />
-                @Html.PasswordFor(m => m.Password)
-            </li>
-            <li>
-                @Html.LabelFor(m => m.ConfirmPassword)
-                <br />
-                @Html.PasswordFor(m => m.ConfirmPassword)
-            </li>
-        </ol>
+        <p>
+            @Html.LabelFor(m => m.UserName)
+            <br />
+            @Html.TextBoxFor(m => m.UserName)
+        </p>
+        <p>
+            @Html.LabelFor(m => m.Email)
+            <br />
+            @Html.TextBoxFor(m => m.Email)
+        </p>
+        <p>
+            @Html.LabelFor(m => m.Password)
+            <br />
+            @Html.PasswordFor(m => m.Password)
+        </p>
+        <p>
+            @Html.LabelFor(m => m.ConfirmPassword)
+            <br />
+            @Html.PasswordFor(m => m.ConfirmPassword)
+        </p>
         <input type="submit" value="Register" />
-    </fieldset>
-        
+    </fieldset>      
 }
 
 @section Scripts {

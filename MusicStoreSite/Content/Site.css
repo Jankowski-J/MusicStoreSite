@@ -55,3 +55,7 @@ div.newProducts div.product {
 .navbar-nav {
     float: right;
 }
+
+input[type="text"], input[type="password"] {
+    min-width: 300px;
+}
