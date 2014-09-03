@@ -1,1 +1,13 @@
-﻿
+﻿.productFields {
+    font-weight: bold;
+    
+}
+
+.productFieldLabel {
+    color: #6e4e3e;
+}
+
+h2 {
+    color: #6e4e3e;
+    font-style: italic;
+}
