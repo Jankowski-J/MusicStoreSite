@@ -16,7 +16,7 @@ namespace MusicStoreSite.Models.Entities
                 return;
             }
             _products.Add(product);
-        }
+        }  
 
         public void RemoveItem(Product product)
         {

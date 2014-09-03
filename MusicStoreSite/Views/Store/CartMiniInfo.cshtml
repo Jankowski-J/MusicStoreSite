@@ -1,0 +1,12 @@
+﻿@model MusicStoreSite.Models.Entities.ShoppingCart
+
+@{
+    var message = "Your Cart:" + Model.Products.Count().ToString() + " item(s)";
+}
+
+@Html.ActionLink(message, "Browse","Store")
+
+@section scripts {
+    <script src="~/Scripts/refreshCart.js"></script>
+}
+
