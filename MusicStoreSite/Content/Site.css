@@ -11,3 +11,12 @@ h2 {
     color: #6e4e3e;
     font-style: italic;
 }
+
+.table > tbody > tr > td {
+    border: 0;
+}
+
+.browsedItem {
+    width: 120px;
+    margin: 5px;
+}
