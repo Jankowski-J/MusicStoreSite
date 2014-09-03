@@ -278,6 +278,7 @@
     <Content Include="Areas\Panel\Views\Admin\Details.cshtml" />
     <Content Include="Areas\Panel\Views\Admin\Edit.cshtml" />
     <Content Include="Areas\Panel\Views\Admin\Index.cshtml" />
+    <Content Include="Areas\Panel\Views\_ViewStart.cshtml" />
     <None Include="Scripts\jquery-1.9.1.intellisense.js" />
     <Content Include="Scripts\AddProductDialog.js" />
     <Content Include="Scripts\bootstrap.js" />
