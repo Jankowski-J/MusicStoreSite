@@ -56,7 +56,7 @@ namespace MusicStoreSite.Controllers
         {
             WebSecurity.Logout();
 
-            return RedirectToAction("Browse", "Store");
+            return RedirectToAction("Index", "Store");
         }
 
         //
@@ -83,7 +83,7 @@ namespace MusicStoreSite.Controllers
                 {
                     WebSecurity.CreateUserAndAccount(model.UserName, model.Password, new { Email = model.Email});
                     WebSecurity.Login(model.UserName, model.Password);
-                    return RedirectToAction("Browse", "Store");
+                    return RedirectToAction("Index", "Store");
                 }
                 catch (MembershipCreateUserException e)
                 {

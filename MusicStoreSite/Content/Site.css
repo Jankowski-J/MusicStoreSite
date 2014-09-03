@@ -51,3 +51,7 @@ div.newProducts div.product {
 .loginFieldLabel {
     min-width: 120px;
 }
+
+.navbar-nav {
+    float: right;
+}
