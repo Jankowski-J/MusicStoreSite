@@ -19,6 +19,12 @@ Store.Product = (function() {
         $container.html(data);
         $container.find("#myModal").modal('show');
         refresh();
+        
+        $("#GoToCartButton").click(function (e) {
+            //e.preventDefault();
+            console.log("Clicked");
+            window.location.href = "/Store/ShoppingCart";
+        });
     }
 
     var getModal = function () {
@@ -35,4 +41,5 @@ Store.Product = (function() {
         e.preventDefault();
         getModal();
     });
+
 })();
