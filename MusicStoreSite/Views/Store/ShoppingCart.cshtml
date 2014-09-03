@@ -2,6 +2,7 @@
 
 @{
     ViewBag.Title = "ShoppingCart";
+    decimal sum = 0M;
 }
 
 <h2>Review your cart:</h2>
@@ -9,8 +10,8 @@
 <table class="table">
     <tr>
         <th>Album Name</th>
-        <th>Price</th>
-        <th>Quantity</th>
+        <th style="text-align: right">Price</th>
+        <th style="text-align: right">Quantity</th>
     </tr>
     @foreach (var item in Model.Products.GroupBy(x => x.ProductId)
         .Select(product => new
@@ -25,16 +26,21 @@
             <td>
                 @item.Name
             </td>
-            <td>
+            <td style="text-align: right">
                 @item.Price
             </td>
-            <td>
+            <td style="text-align: right">
                 @item.Quantity
             </td>
             <td>
-                @Html.ActionLink("Remove from cart", "RemoveFromCart", new { productId = item.Id })
+                @Html.ActionLink("Remove from cart", "RemoveFromCart", new {productId = item.Id})
             </td>
         </tr>
+        sum += item.Price * item.Quantity;
     }
+    <tr>
+        <td><b>Total</b></td>
+        <td style="text-align: right"><b>@sum</b></td>
+    </tr>
 </table>
 
