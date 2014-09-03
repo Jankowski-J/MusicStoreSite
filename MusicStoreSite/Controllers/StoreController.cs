@@ -32,12 +32,12 @@ namespace MusicStoreSite.Controllers
         public ActionResult Browse(string category = "")
         {
             var browseResults = musicStoreContext.Products.Where(x => x.Genre == category).ToList();
-            ViewBag.Category = category;
+            ViewBag.Category = category + " albums";
             
             if (category == "") //Temporary for testing at bigger amount of albums
             {
                 browseResults = musicStoreContext.Products.ToList();
-                ViewBag.Category = "All";
+                ViewBag.Category = "All albums";
             }
 
             return View(browseResults);
