@@ -43,10 +43,23 @@ namespace MusicStoreSite.Controllers
             return View(browseResults);
         }
 
-        public ActionResult AddProductDialog()
+        public ActionResult AddProductDialog(int poductId)
         {
             //add
+
+            int i;
             return PartialView();
+        }
+
+        ShoppingCart GeCart()
+        {
+            var cart = (ShoppingCart)Session["Cart"];
+            if (cart == null)
+            {
+                cart = new ShoppingCart();
+                Session["Cart"] = cart;
+            }
+            return cart;
         }
     }
 }

@@ -6,6 +6,7 @@ Store.Product = (function() {
         $.ajax({
             url: "/Store/AddProductDialog",
             type: "GET",
+            data: { poductId: 1 },
             success: function (data) {
                 console.log(data);
                 var $container = $("#modalContainer");
