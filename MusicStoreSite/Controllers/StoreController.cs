@@ -43,14 +43,15 @@ namespace MusicStoreSite.Controllers
 
         public ActionResult ProductDetails(int id = 0)
         {
-            Product product = new Product() { Price = 10.0M, AddedAt = DateTime.Now, Artist = "Ozzy Osbourne", ProductId = 1001, Genre = "Rock", Title = "Paranoid" };
+            Product selectedProduct = musicStoreContext.Products.Where(product => product.ProductId == id).FirstOrDefault();
 
-            return View(product);
+            return View(selectedProduct);
         }
 
         public ActionResult Browse(string category = "")
         {
             var browseResults = musicStoreContext.Products.Where(x => x.Genre == category).ToList();
+
             return View(browseResults);
         }
     }
