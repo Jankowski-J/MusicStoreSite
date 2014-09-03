@@ -14,25 +14,23 @@
 
         <fieldset>
             <legend>Account Information</legend>
-            <ol>
-                <li>
-                    @Html.LabelFor(m => m.UserName, new { @class = "loginFieldLabel" })
-                    @Html.TextBoxFor(m => m.UserName)
-                    @Html.ValidationMessageFor(m => m.UserName)
-                </li>
-                <li>
-                    @Html.LabelFor(m => m.Password, new { @class = "loginFieldLabel" })
-                    @Html.PasswordFor(m => m.Password)
-                    @Html.ValidationMessageFor(m => m.Password)
-                </li>
-                <li>
-                    <span>
-                        @Html.LabelFor(m => m.RememberMe, new { @class = "loginFieldLabel" })
-                        @Html.CheckBoxFor(m => m.RememberMe)
-                    </span>
-                </li>
-            </ol>
-            <input type="submit" value="Log in" />
+            <p>
+                @Html.LabelFor(m => m.UserName, new { @class = "loginFieldLabel" })
+                @Html.TextBoxFor(m => m.UserName)
+                @Html.ValidationMessageFor(m => m.UserName)
+            </p>
+            <p>
+                @Html.LabelFor(m => m.Password, new { @class = "loginFieldLabel" })
+                @Html.PasswordFor(m => m.Password)
+                @Html.ValidationMessageFor(m => m.Password)
+            </p>
+            <p>
+                <span>
+                    @Html.LabelFor(m => m.RememberMe, new { @class = "loginFieldLabel" })
+                    @Html.CheckBoxFor(m => m.RememberMe)
+                </span>
+            </p>
+            <input type="submit" value="Log on" />
         </fieldset>
     }
 </section>

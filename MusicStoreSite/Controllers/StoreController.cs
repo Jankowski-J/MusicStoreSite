@@ -85,6 +85,19 @@ namespace MusicStoreSite.Controllers
             return cart;
         }
 
+        public ActionResult ShoppingCart()
+        {
+            var cart = GetCart();
+            return View(cart);
+        }
+
+        public ActionResult RemoveFromCart(int productId)
+        {
+            var cart = GetCart();
+            cart.RemoveItem(productId);
+            return View("ShoppingCart", cart);
+        }
+
         string RenderRazorViewToString(string viewName, object model)
         {
             ViewData.Model = model;

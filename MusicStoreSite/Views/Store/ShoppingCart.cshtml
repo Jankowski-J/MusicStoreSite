@@ -1,0 +1,40 @@
+﻿@model MusicStoreSite.Models.Entities.ShoppingCart
+
+@{
+    ViewBag.Title = "ShoppingCart";
+}
+
+<h2>Review your cart:</h2>
+
+<table class="table">
+    <tr>
+        <th>Album Name</th>
+        <th>Price</th>
+        <th>Quantity</th>
+    </tr>
+    @foreach (var item in Model.Products.GroupBy(x => x.ProductId)
+        .Select(product => new
+        {
+            Id = product.Key,
+            Price = product.Select(x => x.Price).Last(),
+            Quantity = product.Count(),
+            Name = product.Select(x => x.Artist + " - " + x.Title).Last()
+        }))
+    {
+        <tr>
+            <td>
+                @item.Name
+            </td>
+            <td>
+                @item.Price
+            </td>
+            <td>
+                @item.Quantity
+            </td>
+            <td>
+                @Html.ActionLink("Remove from cart", "RemoveFromCart", new { productId = item.Id })
+            </td>
+        </tr>
+    }
+</table>
+
