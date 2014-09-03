@@ -8,16 +8,6 @@ using System.Web.Security;
 
 namespace MusicStoreSite.Models
 {
-    public class UsersContext : DbContext
-    {
-        public UsersContext()
-            : base("DefaultConnection")
-        {
-        }
-
-        public DbSet<UserProfile> UserProfiles { get; set; }
-    }
-
     [Table("UserProfile")]
     public class UserProfile
     {
@@ -25,6 +15,8 @@ namespace MusicStoreSite.Models
         [DatabaseGeneratedAttribute(DatabaseGeneratedOption.Identity)]
         public int UserId { get; set; }
         public string UserName { get; set; }
+        [Required()]
+        public string Email { get; set; }
     }
 
     public class RegisterExternalLoginModel

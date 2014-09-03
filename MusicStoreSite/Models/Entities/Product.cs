@@ -8,6 +8,7 @@ namespace MusicStoreSite.Models.Entities
 {
     public class Product
     {
+        [Key]
         public int ProductId { set; get; }
         [Required()]
         public string Artist { set; get; }

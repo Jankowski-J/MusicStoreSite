@@ -3,6 +3,7 @@ using System.Data.Entity;
 using System.Data.Entity.Infrastructure;
 using System.Threading;
 using System.Web.Mvc;
+using MusicStoreSite.Models.Contexts;
 using WebMatrix.WebData;
 using MusicStoreSite.Models;
 
@@ -25,11 +26,11 @@ namespace MusicStoreSite.Filters
         {
             public SimpleMembershipInitializer()
             {
-                Database.SetInitializer<UsersContext>(null);
+                Database.SetInitializer<MusicStoreContext>(null);
 
                 try
                 {
-                    using (var context = new UsersContext())
+                    using (var context = new MusicStoreContext())
                     {
                         if (!context.Database.Exists())
                         {
