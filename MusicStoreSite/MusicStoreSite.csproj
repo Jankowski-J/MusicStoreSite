@@ -346,6 +346,7 @@
     <Content Include="Views\Shared\CategoryList.cshtml">
       <SubType>Code</SubType>
     </Content>
+    <Content Include="Views\Store\ShoppingCart.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

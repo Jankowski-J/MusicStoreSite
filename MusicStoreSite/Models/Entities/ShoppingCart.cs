@@ -18,9 +18,9 @@ namespace MusicStoreSite.Models.Entities
             _products.Add(product);
         }  
 
-        public void RemoveItem(Product product)
+        public void RemoveItem(int productId)
         {
-            var productToRemove = _products.Where(x => x.ProductId == product.ProductId).FirstOrDefault();
+            var productToRemove = _products.Where(x => x.ProductId == productId).FirstOrDefault();
             if (productToRemove == null)
             {
                 return;
