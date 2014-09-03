@@ -14,6 +14,7 @@ namespace MusicStoreSite.Models.Contexts
         {
         }
 
+        public DbSet<UserProfile> UserProfiles { get; set; }
         public DbSet<Product> Products { get; set; }
 
         
