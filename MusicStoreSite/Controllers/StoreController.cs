@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using Microsoft.Ajax.Utilities;
@@ -63,6 +64,7 @@ namespace MusicStoreSite.Controllers
             return PartialView(GetCart());
         }
 
+        [HttpPost]
         public ActionResult GetCartMiniInfo()
         {
             var stringView = RenderRazorViewToString("CartMiniInfo", GetCart());

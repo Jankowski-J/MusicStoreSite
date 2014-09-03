@@ -2,11 +2,23 @@
 
 Store.Product = (function() {
 
+    var refresh = function () {
+        console.log("refresh called");
+        $.ajax({
+            url: "/Store/GetCartMiniInfo",
+            type: "post",
+            success: function (data) {
+                console.log("refresh recieved");
+                $("#cartMenu").html(data.view);
+            }
+        });
+    }
+
     var onModalReviewed = function(data) {
         var $container = $("#modalContainer");
         $container.html(data);
         $container.find("#myModal").modal('show');
-        Menu.MiniCounter.Refresh();
+        refresh();
     }
 
     var getModal = function () {
