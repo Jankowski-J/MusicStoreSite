@@ -16,11 +16,12 @@ namespace MusicStoreSite.Controllers
 
         private MusicStoreContext musicStoreContext = new MusicStoreContext();
 
-        public ActionResult Index()
+        public ViewResult Index()
         {
-            return View();
+            var newProducts = musicStoreContext.Products.OrderBy(x => x.AddedAt).Take(5).AsEnumerable();
+            return View(newProducts);
         }
-        
+
         public ActionResult ProductDetails(int id = 0)
         {
             Product selectedProduct = musicStoreContext.Products.Where(product => product.ProductId == id).FirstOrDefault();
@@ -38,7 +39,7 @@ namespace MusicStoreSite.Controllers
                 browseResults = musicStoreContext.Products.ToList();
                 ViewBag.Category = "All";
             }
-            
+
             return View(browseResults);
         }
     }
