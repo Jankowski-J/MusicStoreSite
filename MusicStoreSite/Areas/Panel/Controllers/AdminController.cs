@@ -8,8 +8,9 @@ using System.Web.Mvc;
 using MusicStoreSite.Models.Entities;
 using MusicStoreSite.Models.Contexts;
 
-namespace MusicStoreSite.Controllers
+namespace MusicStoreSite.Areas.Panel.Controllers
 {
+    [Authorize(Users="admin")]
     public class AdminController : Controller
     {
         private MusicStoreContext db = new MusicStoreContext();
