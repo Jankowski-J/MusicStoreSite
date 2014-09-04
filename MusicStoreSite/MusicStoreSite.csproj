@@ -181,13 +181,15 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Areas\Panel\Controllers\AdminController.cs" />
+    <Compile Include="Areas\Panel\PanelAreaRegistration.cs" />
     <Compile Include="Controllers\AccountController.cs" />
-    <Compile Include="Controllers\AdminController.cs" />
     <Compile Include="Controllers\StoreController.cs" />
     <Compile Include="Filters\InitializeSimpleMembershipAttribute.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Infrastructure\ProductModelBinder.cs" />
     <Compile Include="Models\Abstract\IProductRepository.cs" />
     <Compile Include="Models\AccountModels.cs" />
     <Compile Include="Models\Concrete\ProductRepo.cs" />
@@ -269,6 +271,14 @@
     <Content Include="fonts\glyphicons-halflings-regular.eot" />
     <Content Include="Content\bootstrap-theme.css.map" />
     <Content Include="Content\bootstrap.css.map" />
+    <Content Include="Areas\Panel\Views\Web.config" />
+    <Content Include="Areas\Panel\Views\Shared\_AdminLayout.cshtml" />
+    <Content Include="Areas\Panel\Views\Admin\Create.cshtml" />
+    <Content Include="Areas\Panel\Views\Admin\Delete.cshtml" />
+    <Content Include="Areas\Panel\Views\Admin\Details.cshtml" />
+    <Content Include="Areas\Panel\Views\Admin\Edit.cshtml" />
+    <Content Include="Areas\Panel\Views\Admin\Index.cshtml" />
+    <Content Include="Areas\Panel\Views\_ViewStart.cshtml" />
     <None Include="Scripts\jquery-1.9.1.intellisense.js" />
     <Content Include="Scripts\AddProductDialog.js" />
     <Content Include="Scripts\bootstrap.js" />
@@ -322,7 +332,6 @@
     <Content Include="Views\Account\Register.cshtml" />
     <Content Include="Views\Account\ExternalLoginFailure.cshtml" />
     <Content Include="Views\Account\ExternalLoginConfirmation.cshtml" />
-    <Content Include="Views\Admin\Create.cshtml" />
     <Content Include="Views\Home\About.cshtml" />
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
@@ -338,15 +347,11 @@
     <Content Include="Views\Shared\CategoryList.cshtml">
       <SubType>Code</SubType>
     </Content>
-    <Content Include="Views\Shared\_AdminLayout.cshtml" />
-    <Content Include="Views\Admin\Delete.cshtml" />
-    <Content Include="Views\Admin\Details.cshtml" />
-    <Content Include="Views\Admin\Edit.cshtml" />
-    <Content Include="Views\Admin\Index.cshtml" />
     <Content Include="Views\Store\ShoppingCart.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Areas\Panel\Models\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />

@@ -39,7 +39,7 @@ div.newProducts div.product {
     width: 140px;
 }
 
-.table > tbody > tr > td {
+.table > tbody > tr > td, .table > tbody > tr > th {
     border: 0;
 }
 
@@ -58,4 +58,12 @@ div.newProducts div.product {
 
 input[type="text"], input[type="password"] {
     min-width: 300px;
+}
+
+li.active > form > a {
+  color: #555;
+  cursor: default;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-bottom-color: transparent;
 }
