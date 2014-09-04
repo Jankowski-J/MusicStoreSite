@@ -197,6 +197,7 @@
     <Compile Include="Models\Contexts\MusicStoreContext.cs" />
     <Compile Include="Models\Entities\Genre.cs" />
     <Compile Include="Models\Entities\Order.cs" />
+    <Compile Include="Models\Entities\OrderItem.cs" />
     <Compile Include="Models\Entities\Product.cs" />
     <Compile Include="Models\Entities\ShoppingCart.cs" />
     <Compile Include="Models\ProductViewModel.cs" />
@@ -304,6 +305,7 @@
     <Content Include="Scripts\modernizr-2.6.2.js" />
     <Content Include="Scripts\offcanvas.js" />
     <Content Include="Scripts\refreshCart.js" />
+    <Content Include="Scripts\Store\CheckoutScreen.js" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
