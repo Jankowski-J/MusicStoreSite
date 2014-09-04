@@ -13,6 +13,8 @@ namespace MusicStoreSite
         {
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
 
+            routes.MapRoute(name: "Home", url: "Home/{action}/{id}", defaults: new { controller = "Store", action = "Index", id = UrlParameter.Optional },
+                namespaces: new[] { "MusicStoreSite.Controllers" });
             routes.MapRoute(
                 name: "Default",
                 url: "{controller}/{action}/{id}",
