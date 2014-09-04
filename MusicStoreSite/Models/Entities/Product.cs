@@ -15,7 +15,7 @@ namespace MusicStoreSite.Models.Entities
         [Required()]
         public string Title { get; set; }
         [Required()]
-        public int Genre { get; set; }
+        public int GenreId { get; set; }
         [Required()]
         public decimal Price { get; set; }
         [Required()]

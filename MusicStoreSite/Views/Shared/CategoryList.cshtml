@@ -1,11 +1,12 @@
 ﻿@using System.ComponentModel
 @using MusicStoreSite.Models.Contexts
+@using MusicStoreSite.Models.Entities
 @{
     MusicStoreContext musicStoreContext = new MusicStoreContext();
-    List<string> categoryList = musicStoreContext.Genres.Select(product => product.Name).ToList();
+    List<Genre> categoryList = musicStoreContext.Genres.ToList();
 }
 
 @foreach (var category in categoryList)
 {
-    @Html.ActionLink(category, "Browse", "Store", new {category = category}, new {@class="list-group-item"})
+    @Html.ActionLink(category.Name, "Browse", "Store", new {category = category.GenreId}, new {@class="list-group-item"})
 }

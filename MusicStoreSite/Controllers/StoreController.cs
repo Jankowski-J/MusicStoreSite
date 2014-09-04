@@ -34,10 +34,14 @@ namespace MusicStoreSite.Controllers
 
         public ActionResult Browse(int category = 0)
         {
-            var browseResults = musicStoreContext.Products.Where(x => x.Genre == category).ToList();
-            ViewBag.Category = category + " albums";
-            
-            if (category == 0) //Temporary for testing at bigger amount of albums
+            var browseResults = new List<Product>();
+
+            if (category != 0)
+            {
+                browseResults = musicStoreContext.Products.Where(x => x.GenreId == category).ToList();
+                var genre = musicStoreContext.Genres.Where(x => x.GenreId == category).FirstOrDefault();
+                ViewBag.Category = genre.Name + " albums:";
+            } else //Temporary for testing at bigger amount of albums
             {
                 browseResults = musicStoreContext.Products.ToList();
                 ViewBag.Category = "All albums";
@@ -75,17 +79,6 @@ namespace MusicStoreSite.Controllers
             });
         }
 
-        ShoppingCart GetCart()
-        {
-            var cart = (ShoppingCart)Session["Cart"];
-            if (cart == null)
-            {
-                cart = new ShoppingCart();
-                Session["Cart"] = cart;
-            }
-            return cart;
-        }
-
         public ActionResult ShoppingCart()
         {
             var cart = GetCart();
@@ -97,6 +90,23 @@ namespace MusicStoreSite.Controllers
             var cart = GetCart();
             cart.RemoveItem(productId);
             return View("ShoppingCart", cart);
+        }
+
+        [Authorize]
+        public ActionResult CheckoutScreen()
+        {
+            return View();
+        }
+
+        ShoppingCart GetCart()
+        {
+            var cart = (ShoppingCart)Session["Cart"];
+            if (cart == null)
+            {
+                cart = new ShoppingCart();
+                Session["Cart"] = cart;
+            }
+            return cart;
         }
 
         string RenderRazorViewToString(string viewName, object model)

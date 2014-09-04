@@ -18,6 +18,7 @@ namespace MusicStoreSite.Models.Contexts
         public DbSet<UserProfile> UserProfiles { get; set; }
         public DbSet<Product> Products { get; set; }
         public DbSet<Genre> Genres { get; set; }
+        public DbSet<Order> Orders { get; set; }
         
     }
 }

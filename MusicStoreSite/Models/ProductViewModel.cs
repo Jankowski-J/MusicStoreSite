@@ -23,7 +23,7 @@ namespace MusicStoreSite.Models
             ProductId = product.ProductId;
             Artist = product.Artist;
             Title = product.Title;
-            Genre = musicStoreContext.Genres.Where(x => x.GenreId == product.Genre).Select(y => y.Name).Last();
+            Genre = musicStoreContext.Genres.Where(x => x.GenreId == product.GenreId).Select(y => y.Name).FirstOrDefault();
             Price = product.Price;
             AddedAt = product.AddedAt;
         }

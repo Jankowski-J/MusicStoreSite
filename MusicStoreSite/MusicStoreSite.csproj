@@ -190,11 +190,17 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Infrastructure\ProductModelBinder.cs" />
+    <Compile Include="Migrations\201409040756182_ProductGenre.cs" />
+    <Compile Include="Migrations\201409040756182_ProductGenre.Designer.cs">
+      <DependentUpon>201409040756182_ProductGenre.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Abstract\IProductRepository.cs" />
     <Compile Include="Models\AccountModels.cs" />
     <Compile Include="Models\Concrete\ProductRepo.cs" />
     <Compile Include="Models\Contexts\MusicStoreContext.cs" />
     <Compile Include="Models\Entities\Genre.cs" />
+    <Compile Include="Models\Entities\Order.cs" />
     <Compile Include="Models\Entities\Product.cs" />
     <Compile Include="Models\Entities\ShoppingCart.cs" />
     <Compile Include="Models\ProductViewModel.cs" />
@@ -280,6 +286,7 @@
     <Content Include="Areas\Panel\Views\Admin\Details.cshtml" />
     <Content Include="Areas\Panel\Views\Admin\Edit.cshtml" />
     <Content Include="Areas\Panel\Views\Admin\Index.cshtml" />
+    <Content Include="Areas\Panel\Views\_ViewStart.cshtml" />
     <None Include="Scripts\jquery-1.9.1.intellisense.js" />
     <Content Include="Scripts\AddProductDialog.js" />
     <Content Include="Scripts\bootstrap.js" />
@@ -349,6 +356,7 @@
       <SubType>Code</SubType>
     </Content>
     <Content Include="Views\Store\ShoppingCart.cshtml" />
+    <Content Include="Views\Store\CheckoutScreen.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -356,6 +364,11 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201409040756182_ProductGenre.resx">
+      <DependentUpon>201409040756182_ProductGenre.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
