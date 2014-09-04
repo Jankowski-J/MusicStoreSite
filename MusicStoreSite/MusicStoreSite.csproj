@@ -192,11 +192,6 @@
     </Compile>
     <Compile Include="Infrastructure\AdminAuthorizationAttribute.cs" />
     <Compile Include="Infrastructure\DecimalModelBinder.cs" />
-    <Compile Include="Migrations\201409040957304_ImageToProduct.cs" />
-    <Compile Include="Migrations\201409040957304_ImageToProduct.Designer.cs">
-      <DependentUpon>201409040957304_ImageToProduct.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Abstract\IProductRepository.cs" />
     <Compile Include="Models\AccountModels.cs" />
     <Compile Include="Models\Concrete\ProductRepo.cs" />
@@ -369,11 +364,6 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="Migrations\201409040957304_ImageToProduct.resx">
-      <DependentUpon>201409040957304_ImageToProduct.cs</DependentUpon>
-    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
