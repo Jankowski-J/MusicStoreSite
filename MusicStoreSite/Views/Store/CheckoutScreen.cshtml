@@ -1,5 +1,55 @@
-﻿@{
+﻿@model MusicStoreSite.Models.Entities.Order
+@{
     ViewBag.Title = "CheckoutScreen";
 }
 
-<h2>CheckoutScreen</h2>
+<div>
+    <fieldset>
+        <legend>Shipping Information</legend>
+        <p>
+            @Html.LabelFor(m => m.FirstName, new { @class = "orderFieldLabel" })
+            @Html.TextBoxFor(m => m.FirstName)
+            @Html.ValidationMessageFor(m => m.FirstName)
+        </p>
+        <p>
+            @Html.LabelFor(m => m.LastName, new { @class = "orderFieldLabel" })
+            @Html.TextBoxFor(m => m.LastName)
+            @Html.ValidationMessageFor(m => m.LastName)
+        </p>
+        <p>
+            @Html.LabelFor(m => m.Address, new { @class = "orderFieldLabel" })
+            @Html.TextBoxFor(m => m.Address)
+            @Html.ValidationMessageFor(m => m.Address)
+        </p>
+        <p>
+            @Html.LabelFor(m => m.City, new { @class = "orderFieldLabel" })
+            @Html.TextBoxFor(m => m.City)
+            @Html.ValidationMessageFor(m => m.City)
+        </p>
+        <p>
+            @Html.LabelFor(m => m.State, new { @class = "orderFieldLabel" })
+            @Html.TextBoxFor(m => m.State)
+            @Html.ValidationMessageFor(m => m.State)
+        </p>
+        <p>
+            @Html.LabelFor(m => m.PostalCode, new { @class = "orderFieldLabel" })
+            @Html.TextBoxFor(m => m.PostalCode)
+            @Html.ValidationMessageFor(m => m.PostalCode)
+        </p>
+        <p>
+            @Html.LabelFor(m => m.Country, new { @class = "orderFieldLabel" })
+            @Html.TextBoxFor(m => m.Country)
+            @Html.ValidationMessageFor(m => m.Country)
+        </p>
+        <p>
+            @Html.LabelFor(m => m.Phone, new { @class = "orderFieldLabel" })
+            @Html.TextBoxFor(m => m.Phone)
+            @Html.ValidationMessageFor(m => m.Phone)
+        </p>
+        <p>
+            @Html.LabelFor(m => m.Email, new { @class = "orderFieldLabel" })
+            @Html.TextBoxFor(m => m.Email)
+            @Html.ValidationMessageFor(m => m.Email)
+        </p>
+    </fieldset>
+</div>
