@@ -309,7 +309,7 @@
     <Content Include="Scripts\knockout-2.2.0.js" />
     <Content Include="Scripts\modernizr-2.6.2.js" />
     <Content Include="Scripts\offcanvas.js" />
-	<Content Include="Scripts\Store\CheckoutScreen.js" />
+    <Content Include="Scripts\Store\CheckoutScreen.js" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
