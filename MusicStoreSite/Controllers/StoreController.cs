@@ -112,20 +112,30 @@ namespace MusicStoreSite.Controllers
             {
                 int? orderIndex = null;
 
-
                 musicStoreContext.Orders.Add(order);
-
              
                 musicStoreContext.SaveChanges();
 
                 orderIndex = order.OrderId;
 
-                foreach (var item in GetCart().Products.GroupBy(product => product.ProductId).Select(p => p))
-                {
-                   // var orderItem = new OrderItem() { OrderId = (int)orderIndex, ProductId = item., Quantity = GetCart().Products.GroupBy(product => product.ProductId).Count() };
+                //foreach (var item in GetCart().Products)
+                //{
+                //    var orderItem = new OrderItem() { OrderId = (int)orderIndex, ProductId = item.ProductId, Quantity = 1 };
 
+                //    var foundItem = musicStoreContext.OrderItems.Find(orderItem);
 
-                }
+                //    if (foundItem != null)
+                //    {
+                //        foundItem.Quantity++;
+                //    }
+                //    else
+                //    {
+                //        musicStoreContext.OrderItems.Add(orderItem);
+                //    }
+                //}
+
+                //musicStoreContext.SaveChanges();
+
                 ViewBag.OrderIndex = orderIndex;
 
                 Session["Cart"] = new ShoppingCart();
