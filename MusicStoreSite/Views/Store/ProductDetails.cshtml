@@ -1,6 +1,10 @@
 ﻿@using MusicStoreSite.Models
 @model ProductViewModel
 
+@{
+    ViewBag.Title = @Model.Artist + " - " + @Model.Title;
+}
+
 <h2>@Model.Title </h2>
 
 <div>
