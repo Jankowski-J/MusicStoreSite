@@ -15,6 +15,7 @@ namespace MusicStoreSite.Models
         public string Genre { get; set; }
         public decimal Price { get; set; }
         public DateTime AddedAt { get; set; }
+        public string CoverLocation { get; set; }
 
         public ProductViewModel(int productId)
         {
@@ -26,6 +27,7 @@ namespace MusicStoreSite.Models
             Genre = musicStoreContext.Genres.Where(x => x.GenreId == product.GenreId).Select(y => y.Name).FirstOrDefault();
             Price = product.Price;
             AddedAt = product.AddedAt;
+            CoverLocation = product.CoverLocation;
         }
     }
 }
