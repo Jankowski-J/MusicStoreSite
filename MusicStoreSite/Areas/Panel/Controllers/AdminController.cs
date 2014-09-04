@@ -8,10 +8,11 @@ using System.Web.Mvc;
 using MusicStoreSite.Models.Entities;
 using MusicStoreSite.Models.Contexts;
 using MusicStoreSite.Models;
+using MusicStoreSite.Infrastructure;
 
 namespace MusicStoreSite.Areas.Panel.Controllers
 {
-    [Authorize(Users="admin")]
+    [AdminAuthorizationAttribute(Users="admin")]
     public class AdminController : Controller
     {
         private MusicStoreContext db = new MusicStoreContext();
