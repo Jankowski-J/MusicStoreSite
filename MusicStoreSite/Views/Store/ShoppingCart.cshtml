@@ -43,4 +43,9 @@
         <td style="text-align: right"><b>@sum</b></td>
     </tr>
 </table>
+@if (Model.Products.Any())
+{
+    @Html.ActionLink("Checkout", "CheckoutScreen", "Store", new {@class = "btn btn-lg btn-success"})
+}
+
 
