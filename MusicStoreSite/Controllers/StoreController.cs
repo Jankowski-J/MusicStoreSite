@@ -50,8 +50,14 @@ namespace MusicStoreSite.Controllers
             return View(browseResults);
         }
 
-        public ActionResult AddProductDialog(int poductId)
+        public ActionResult AddProductDialog(int? poductId)
         {
+            if (poductId == null)
+            {
+                ViewBag.ErrorCode = 403;
+                ViewBag.ErrorMessage = "No productId was specified in request";
+                return View("Error");
+            }
             var cart = GetCart();
             ViewBag.Message= "ERROR";
             var product = musicStoreContext.Products.Where(x => x.ProductId == poductId).FirstOrDefault();
@@ -96,6 +102,25 @@ namespace MusicStoreSite.Controllers
         public ActionResult CheckoutScreen()
         {
             return View();
+        }
+
+        [Authorize]
+        [HttpPost]
+        public ActionResult CheckoutScreen(Order order)
+        {  
+            if (ModelState.IsValid)
+            {
+                int? orderIndex = null;
+                musicStoreContext.Orders.Add(order);
+                musicStoreContext.SaveChanges();
+
+                orderIndex = order.OrderId;
+
+                ViewBag.OrderIndex = orderIndex;
+                return View("OrderInfo");
+            }
+
+            return View(order);
         }
 
         ShoppingCart GetCart()

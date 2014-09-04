@@ -182,6 +182,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Areas\Panel\Controllers\AdminController.cs" />
+    <Compile Include="Areas\Panel\Controllers\GenresController.cs" />
     <Compile Include="Areas\Panel\PanelAreaRegistration.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\StoreController.cs" />
@@ -284,10 +285,14 @@
     <Content Include="Areas\Panel\Views\Shared\_AdminLayout.cshtml" />
     <Content Include="Areas\Panel\Views\Admin\Create.cshtml" />
     <Content Include="Areas\Panel\Views\Admin\Delete.cshtml" />
-    <Content Include="Areas\Panel\Views\Admin\Details.cshtml" />
     <Content Include="Areas\Panel\Views\Admin\Edit.cshtml" />
     <Content Include="Areas\Panel\Views\Admin\Index.cshtml" />
     <Content Include="Areas\Panel\Views\_ViewStart.cshtml" />
+    <Content Include="Areas\Panel\Views\Genres\Index.cshtml" />
+    <Content Include="Areas\Panel\Views\Genres\Create.cshtml" />
+    <Content Include="Areas\Panel\Views\Genres\Edit.cshtml" />
+    <Content Include="Areas\Panel\Views\Genres\Delete.cshtml" />
+    <Content Include="Areas\Panel\Views\Admin\_GenresDropDown.cshtml" />
     <None Include="Scripts\jquery-1.9.1.intellisense.js" />
     <Content Include="Scripts\AddProductDialog.js" />
     <Content Include="Scripts\bootstrap.js" />
@@ -356,6 +361,7 @@
     </Content>
     <Content Include="Views\Store\ShoppingCart.cshtml" />
     <Content Include="Views\Store\CheckoutScreen.cshtml" />
+    <Content Include="Views\Store\OrderInfo.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

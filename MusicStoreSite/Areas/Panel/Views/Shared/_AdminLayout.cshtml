@@ -34,7 +34,8 @@
         <div class="row row-offcanvas row-offcanvas-right">
             <div class="col-xs-6 col-sm-3 sidebar-offcanvas" id="sidebar" role="navigation">
                 <div class="list-group">
-                    @Html.ActionLink("Products", "Index", null, new { @class = "list-group-item" })
+                    @Html.ActionLink("Products", "Index", "Admin", null, new { @class = "list-group-item" })
+                    @Html.ActionLink("Genres", "Index", "Genres", null, new { @class = "list-group-item" })
                 </div>
             </div>
             <!--/span-->

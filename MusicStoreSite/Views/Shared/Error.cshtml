@@ -5,6 +5,21 @@
 }
 
 <hgroup class="title">
-    <h1 class="error">Error.</h1>
-    <h2 class="error">An error occurred while processing your request.</h2>
+    @if (ViewBag.ErrorCode != null)
+    {
+        <h1 class="error">@ViewBag.ErrorCode</h1>
+    }
+    else
+    {
+       <h1 class="error">Error.</h1>
+    }
+
+    @if (ViewBag.ErrorMessage != null)
+    {
+        <h2 class="error">@ViewBag.ErrorMessage</h2>
+    }
+    else
+    {
+       <h2 class="error">An error occurred while processing your request.</h2>
+    }
 </hgroup>
