@@ -45,8 +45,14 @@ namespace MusicStoreSite.Controllers
             return View(browseResults);
         }
 
-        public ActionResult AddProductDialog(int poductId)
+        public ActionResult AddProductDialog(int? poductId)
         {
+            if (poductId == null)
+            {
+                ViewBag.ErrorIndex = 403;
+                return View("Error");
+                //throw new HttpException(403, "No productId was specified in request");
+            }
             var cart = GetCart();
             ViewBag.Message= "ERROR";
             var product = musicStoreContext.Products.Where(x => x.ProductId == poductId).FirstOrDefault();
