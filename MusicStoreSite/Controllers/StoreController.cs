@@ -41,7 +41,8 @@ namespace MusicStoreSite.Controllers
                 browseResults = musicStoreContext.Products.Where(x => x.GenreId == category).ToList();
                 var genre = musicStoreContext.Genres.Where(x => x.GenreId == category).FirstOrDefault();
                 ViewBag.Category = genre.Name + " albums:";
-            } else //Temporary for testing at bigger amount of albums
+            }
+            else //Temporary for testing at bigger amount of albums
             {
                 browseResults = musicStoreContext.Products.ToList();
                 ViewBag.Category = "All albums";
@@ -59,7 +60,7 @@ namespace MusicStoreSite.Controllers
                 return View("Error");
             }
             var cart = GetCart();
-            ViewBag.Message= "ERROR";
+            ViewBag.Message = "ERROR";
             var product = musicStoreContext.Products.Where(x => x.ProductId == poductId).FirstOrDefault();
             if (product != null)
             {
@@ -81,7 +82,7 @@ namespace MusicStoreSite.Controllers
             var stringView = RenderRazorViewToString("CartMiniInfo", GetCart());
             return Json(new
             {
-                view = stringView 
+                view = stringView
             });
         }
 
@@ -107,34 +108,43 @@ namespace MusicStoreSite.Controllers
         [Authorize]
         [HttpPost]
         public ActionResult CheckoutScreen(Order order)
-        {  
+        {
             if (ModelState.IsValid)
             {
                 int? orderIndex = null;
+                order.TotalPrice = 0.0M;
 
                 musicStoreContext.Orders.Add(order);
-             
+
                 musicStoreContext.SaveChanges();
 
                 orderIndex = order.OrderId;
 
-                //foreach (var item in GetCart().Products)
-                //{
-                //    var orderItem = new OrderItem() { OrderId = (int)orderIndex, ProductId = item.ProductId, Quantity = 1 };
+                List<OrderItem> items = new List<OrderItem>();
 
-                //    var foundItem = musicStoreContext.OrderItems.Find(orderItem);
+                foreach (var item in GetCart().Products)
+                {
+                    var orderItem = new OrderItem() { OrderId = (int)orderIndex, ProductId = item.ProductId, Quantity = 1 };
 
-                //    if (foundItem != null)
-                //    {
-                //        foundItem.Quantity++;
-                //    }
-                //    else
-                //    {
-                //        musicStoreContext.OrderItems.Add(orderItem);
-                //    }
-                //}
+                    var foundItem = items.Find(i => i.OrderId == orderIndex && i.ProductId == item.ProductId);
+                    if (foundItem != null)
+                    {
+                        foundItem.Quantity++;
+                    }
+                    else
+                    {
+                        items.Insert(0, orderItem);
+                    }
+                    order.TotalPrice += item.Price;
+                }
 
-                //musicStoreContext.SaveChanges();
+                foreach (var item in items)
+                {
+                    musicStoreContext.OrderItems.Add(item);
+                }
+
+                musicStoreContext.Orders.Where(o => o.OrderId == order.OrderId).FirstOrDefault().TotalPrice = order.TotalPrice;
+                musicStoreContext.SaveChanges();
 
                 ViewBag.OrderIndex = orderIndex;
 
