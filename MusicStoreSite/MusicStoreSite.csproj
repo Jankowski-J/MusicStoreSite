@@ -189,13 +189,17 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Infrastructure\ProductModelBinder.cs" />
+    <Compile Include="Infrastructure\AdminAuthorizationAttribute.cs" />
+    <Compile Include="Infrastructure\DecimalModelBinder.cs" />
     <Compile Include="Models\Abstract\IProductRepository.cs" />
     <Compile Include="Models\AccountModels.cs" />
     <Compile Include="Models\Concrete\ProductRepo.cs" />
     <Compile Include="Models\Contexts\MusicStoreContext.cs" />
+    <Compile Include="Models\Entities\Genre.cs" />
+    <Compile Include="Models\Entities\Order.cs" />
     <Compile Include="Models\Entities\Product.cs" />
     <Compile Include="Models\Entities\ShoppingCart.cs" />
+    <Compile Include="Models\ProductViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -356,6 +360,11 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201409040756182_ProductGenre.resx">
+      <DependentUpon>201409040756182_ProductGenre.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

@@ -1,4 +1,5 @@
-﻿using MusicStoreSite.Models.Entities;
+﻿using System.Web.Razor;
+using MusicStoreSite.Models.Entities;
 using System;
 using System.Collections.Generic;
 using System.Data.Entity;
@@ -16,7 +17,8 @@ namespace MusicStoreSite.Models.Contexts
 
         public DbSet<UserProfile> UserProfiles { get; set; }
         public DbSet<Product> Products { get; set; }
-
+        public DbSet<Genre> Genres { get; set; }
+        public DbSet<Order> Orders { get; set; }
         
     }
 }
