@@ -2,7 +2,7 @@
 @using MusicStoreSite.Models.Contexts
 @{
     MusicStoreContext musicStoreContext = new MusicStoreContext();
-    List<string> categoryList = musicStoreContext.Products.GroupBy(x => x.Genre).Select(product => product.Key).ToList();
+    List<string> categoryList = musicStoreContext.Genres.Select(product => product.Name).ToList();
 }
 
 @foreach (var category in categoryList)

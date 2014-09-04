@@ -6,6 +6,7 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using Microsoft.Ajax.Utilities;
+using MusicStoreSite.Models;
 using MusicStoreSite.Models.Contexts;
 using MusicStoreSite.Models.Entities;
 
@@ -26,17 +27,17 @@ namespace MusicStoreSite.Controllers
 
         public ActionResult ProductDetails(int id = 0)
         {
-            Product selectedProduct = musicStoreContext.Products.Where(product => product.ProductId == id).FirstOrDefault();
+            ProductViewModel selectedProduct = new ProductViewModel(id);
 
             return View(selectedProduct);
         }
 
-        public ActionResult Browse(string category = "")
+        public ActionResult Browse(int category = 0)
         {
             var browseResults = musicStoreContext.Products.Where(x => x.Genre == category).ToList();
             ViewBag.Category = category + " albums";
             
-            if (category == "") //Temporary for testing at bigger amount of albums
+            if (category == 0) //Temporary for testing at bigger amount of albums
             {
                 browseResults = musicStoreContext.Products.ToList();
                 ViewBag.Category = "All albums";
