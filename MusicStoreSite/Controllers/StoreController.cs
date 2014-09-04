@@ -111,12 +111,25 @@ namespace MusicStoreSite.Controllers
             if (ModelState.IsValid)
             {
                 int? orderIndex = null;
+
+
                 musicStoreContext.Orders.Add(order);
+
+             
                 musicStoreContext.SaveChanges();
 
                 orderIndex = order.OrderId;
 
+                foreach (var item in GetCart().Products.GroupBy(product => product.ProductId).Select(p => p))
+                {
+                   // var orderItem = new OrderItem() { OrderId = (int)orderIndex, ProductId = item., Quantity = GetCart().Products.GroupBy(product => product.ProductId).Count() };
+
+
+                }
                 ViewBag.OrderIndex = orderIndex;
+
+                Session["Cart"] = new ShoppingCart();
+
                 return View("OrderInfo");
             }
 
