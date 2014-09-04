@@ -7,9 +7,11 @@ using System.Web;
 using System.Web.Mvc;
 using MusicStoreSite.Models.Entities;
 using MusicStoreSite.Models.Contexts;
+using MusicStoreSite.Infrastructure;
 
 namespace MusicStoreSite.Areas.Panel.Controllers
 {
+    [AdminAuthorizationAttribute(Users = "admin")]
     public class GenresController : Controller
     {
         private MusicStoreContext db = new MusicStoreContext();
