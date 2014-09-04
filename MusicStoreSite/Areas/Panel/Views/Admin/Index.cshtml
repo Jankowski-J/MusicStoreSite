@@ -1,4 +1,8 @@
-﻿@model IEnumerable<MusicStoreSite.Models.Entities.Product>
+﻿@model IEnumerable<MusicStoreSite.Models.ProductViewModel>
+
+@{
+    ViewBag.Title = "Products";
+}
 
 <h2>Products</h2>
 
@@ -8,19 +12,19 @@
 <table class="table-striped table">
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.Artist)
+            @Html.DisplayName("Artist")
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Title)
+            @Html.DisplayName("Title")
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Genre)
+            @Html.DisplayName("Genre")
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Price)
+            @Html.DisplayName("Price")
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.AddedAt)
+            @Html.DisplayName("Added at")
         </th>
         <th></th>
     </tr>
@@ -44,7 +48,6 @@
         </td>
         <td>
             @Html.ActionLink("Edit", "Edit", new { id=item.ProductId }) |
-            @Html.ActionLink("Details", "Details", new { id=item.ProductId }) |
             @Html.ActionLink("Delete", "Delete", new { id=item.ProductId })
         </td>
     </tr>

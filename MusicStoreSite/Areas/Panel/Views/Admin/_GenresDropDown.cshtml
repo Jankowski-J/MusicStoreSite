@@ -1,0 +1,8 @@
+﻿@model IEnumerable<MusicStoreSite.Models.Entities.Genre>
+
+<select id="GenreId" name="GenreId">
+    @foreach (var genre in Model)
+    {
+        @: <option value="@genre.GenreId">@genre.Name</option>
+    }
+</select> 
