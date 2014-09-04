@@ -30,11 +30,10 @@
         </div>
 
         <div class="editor-label">
-            @Html.LabelFor(model => model.Genre)
+            @Html.Label("Genre")
         </div>
-        <div class="editor-field">
-            @Html.EditorFor(model => model.Genre)
-            @Html.ValidationMessageFor(model => model.Genre)
+        <div class="editor-field"> 
+            @Html.Action("GetGenres")
         </div>
 
         <div class="editor-label">

@@ -182,6 +182,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Areas\Panel\Controllers\AdminController.cs" />
+    <Compile Include="Areas\Panel\Controllers\GenresController.cs" />
     <Compile Include="Areas\Panel\PanelAreaRegistration.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\StoreController.cs" />
@@ -191,6 +192,11 @@
     </Compile>
     <Compile Include="Infrastructure\AdminAuthorizationAttribute.cs" />
     <Compile Include="Infrastructure\DecimalModelBinder.cs" />
+    <Compile Include="Migrations\201409040957304_ImageToProduct.cs" />
+    <Compile Include="Migrations\201409040957304_ImageToProduct.Designer.cs">
+      <DependentUpon>201409040957304_ImageToProduct.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Abstract\IProductRepository.cs" />
     <Compile Include="Models\AccountModels.cs" />
     <Compile Include="Models\Concrete\ProductRepo.cs" />
@@ -280,10 +286,14 @@
     <Content Include="Areas\Panel\Views\Shared\_AdminLayout.cshtml" />
     <Content Include="Areas\Panel\Views\Admin\Create.cshtml" />
     <Content Include="Areas\Panel\Views\Admin\Delete.cshtml" />
-    <Content Include="Areas\Panel\Views\Admin\Details.cshtml" />
     <Content Include="Areas\Panel\Views\Admin\Edit.cshtml" />
     <Content Include="Areas\Panel\Views\Admin\Index.cshtml" />
     <Content Include="Areas\Panel\Views\_ViewStart.cshtml" />
+    <Content Include="Areas\Panel\Views\Genres\Index.cshtml" />
+    <Content Include="Areas\Panel\Views\Genres\Create.cshtml" />
+    <Content Include="Areas\Panel\Views\Genres\Edit.cshtml" />
+    <Content Include="Areas\Panel\Views\Genres\Delete.cshtml" />
+    <Content Include="Areas\Panel\Views\Admin\_GenresDropDown.cshtml" />
     <None Include="Scripts\jquery-1.9.1.intellisense.js" />
     <Content Include="Scripts\AddProductDialog.js" />
     <Content Include="Scripts\bootstrap.js" />
@@ -304,8 +314,7 @@
     <Content Include="Scripts\knockout-2.2.0.js" />
     <Content Include="Scripts\modernizr-2.6.2.js" />
     <Content Include="Scripts\offcanvas.js" />
-    <Content Include="Scripts\refreshCart.js" />
-    <Content Include="Scripts\Store\CheckoutScreen.js" />
+	<Content Include="Scripts\Store\CheckoutScreen.js" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -349,7 +358,6 @@
     <Content Include="Views\Store\Browse.cshtml" />
     <Content Include="Views\Store\AddProductDialog.cshtml" />
     <Content Include="Views\Store\CartMiniInfo.cshtml" />
-    <Content Include="Views\Shared\Index.cshtml" />
     <Content Include="Views\Shared\CategoryList.cshtml">
       <SubType>Code</SubType>
     </Content>
@@ -365,8 +373,8 @@
     <Content Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201409040756182_ProductGenre.resx">
-      <DependentUpon>201409040756182_ProductGenre.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201409040957304_ImageToProduct.resx">
+      <DependentUpon>201409040957304_ImageToProduct.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

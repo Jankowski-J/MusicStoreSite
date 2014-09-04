@@ -7,30 +7,23 @@ using System.Web;
 using System.Web.Mvc;
 using MusicStoreSite.Models.Entities;
 using MusicStoreSite.Models.Contexts;
-using MusicStoreSite.Models;
 
 namespace MusicStoreSite.Areas.Panel.Controllers
 {
-    [Authorize(Users="admin")]
-    public class AdminController : Controller
+    public class GenresController : Controller
     {
         private MusicStoreContext db = new MusicStoreContext();
 
         //
-        // GET: /Admin/
+        // GET: /Panel/Genres/
 
         public ActionResult Index()
         {
-            var productsViewModels = new List<ProductViewModel>();
-            foreach (var product in db.Products)
-            {
-                productsViewModels.Add(new ProductViewModel(product.ProductId));
-            }
-            return View(productsViewModels);
+            return View(db.Genres.ToList());
         }
 
         //
-        // GET: /Admin/Create
+        // GET: /Panel/Genres/Create
 
         public ActionResult Create()
         {
@@ -38,80 +31,75 @@ namespace MusicStoreSite.Areas.Panel.Controllers
         }
 
         //
-        // POST: /Admin/Create
+        // POST: /Panel/Genres/Create
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create(Product product)
+        public ActionResult Create(Genre genre)
         {
             if (ModelState.IsValid)
             {
-                db.Products.Add(product);
+                db.Genres.Add(genre);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
 
-            return View(product);
+            return View(genre);
         }
 
         //
-        // GET: /Admin/Edit/5
+        // GET: /Panel/Genres/Edit/5
 
         public ActionResult Edit(int id = 0)
         {
-            Product product = db.Products.Find(id);
-            if (product == null)
+            Genre genre = db.Genres.Find(id);
+            if (genre == null)
             {
                 return HttpNotFound();
             }
-            return View(product);
+            return View(genre);
         }
 
         //
-        // POST: /Admin/Edit/5
+        // POST: /Panel/Genres/Edit/5
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit(Product product)
+        public ActionResult Edit(Genre genre)
         {
             if (ModelState.IsValid)
             {
-                db.Entry(product).State = EntityState.Modified;
+                db.Entry(genre).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            return View(product);
+            return View(genre);
         }
 
         //
-        // GET: /Admin/Delete/5
+        // GET: /Panel/Genres/Delete/5
 
         public ActionResult Delete(int id = 0)
         {
-            Product product = db.Products.Find(id);
-            if (product == null)
+            Genre genre = db.Genres.Find(id);
+            if (genre == null)
             {
                 return HttpNotFound();
             }
-            return View(new ProductViewModel(product.ProductId));
+            return View(genre);
         }
 
         //
-        // POST: /Admin/Delete/5
+        // POST: /Panel/Genres/Delete/5
 
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            Product product = db.Products.Find(id);
-            db.Products.Remove(product);
+            Genre genre = db.Genres.Find(id);
+            db.Genres.Remove(genre);
             db.SaveChanges();
             return RedirectToAction("Index");
-        }
-
-        public ActionResult GetGenres()
-        {
-            return PartialView("_GenresDropDown", db.Genres);
         }
 
         protected override void Dispose(bool disposing)

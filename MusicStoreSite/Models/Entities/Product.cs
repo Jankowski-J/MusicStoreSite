@@ -21,6 +21,8 @@ namespace MusicStoreSite.Models.Entities
         [Required()]
         public DateTime AddedAt { get; set; }
 
+        public string CoverLocation { get; set; }
+
         public Product()
         {
             AddedAt = DateTime.Now;
