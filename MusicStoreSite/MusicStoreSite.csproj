@@ -353,6 +353,7 @@
     </Content>
     <Content Include="Views\Store\ShoppingCart.cshtml" />
     <Content Include="Views\Store\CheckoutScreen.cshtml" />
+    <Content Include="Views\Store\OrderInfo.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
