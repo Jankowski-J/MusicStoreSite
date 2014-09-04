@@ -106,18 +106,21 @@ namespace MusicStoreSite.Controllers
 
         [Authorize]
         [HttpPost]
-        public ActionResult CheckoutForm()
-        {
-            // TO DO: validate form
-             
-            // TO DO: if validation failed -> return form to user
+        public ActionResult CheckoutScreen(Order order)
+        {  
+            if (ModelState.IsValid)
+            {
+                int? orderIndex = null;
+                musicStoreContext.Orders.Add(order);
+                musicStoreContext.SaveChanges();
 
-            int? orderIndex = null; 
-            // TO DO: if validation passed -> save order to DB, 
-            //        if saved set local variable orderIndex 
+                orderIndex = order.OrderId;
 
-            ViewBag.OrderIndex = orderIndex;
-            return View("OrderInfo");
+                ViewBag.OrderIndex = orderIndex;
+                return View("OrderInfo");
+            }
+
+            return View(order);
         }
 
         ShoppingCart GetCart()
