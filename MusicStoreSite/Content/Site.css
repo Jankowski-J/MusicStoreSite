@@ -67,3 +67,16 @@ li.active > form > a {
   border: 1px solid #ddd;
   border-bottom-color: transparent;
 }
+
+div.admin {
+    background-color: antiquewhite;
+}
+
+span.title {
+    float: left;
+    height: 50px;
+    padding: 15px 15px;
+    font-size: 18px;
+    line-height: 20px;
+    margin-left: -15px;
+}
