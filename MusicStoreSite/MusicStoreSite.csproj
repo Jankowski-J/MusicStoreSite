@@ -189,12 +189,8 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Infrastructure\ProductModelBinder.cs" />
-    <Compile Include="Migrations\201409040756182_ProductGenre.cs" />
-    <Compile Include="Migrations\201409040756182_ProductGenre.Designer.cs">
-      <DependentUpon>201409040756182_ProductGenre.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Infrastructure\AdminAuthorizationAttribute.cs" />
+    <Compile Include="Infrastructure\DecimalModelBinder.cs" />
     <Compile Include="Models\Abstract\IProductRepository.cs" />
     <Compile Include="Models\AccountModels.cs" />
     <Compile Include="Models\Concrete\ProductRepo.cs" />
