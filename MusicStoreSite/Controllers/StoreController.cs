@@ -117,6 +117,7 @@ namespace MusicStoreSite.Controllers
             if (ModelState.IsValid)
             {
                 int? orderIndex = null;
+
                 order.TotalPrice = 0.0M;
 
                 musicStoreContext.Orders.Add(order);
