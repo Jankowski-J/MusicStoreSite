@@ -74,17 +74,6 @@ namespace MusicStoreSite.Controllers
             });
         }
 
-        ShoppingCart GetCart()
-        {
-            var cart = (ShoppingCart)Session["Cart"];
-            if (cart == null)
-            {
-                cart = new ShoppingCart();
-                Session["Cart"] = cart;
-            }
-            return cart;
-        }
-
         public ActionResult ShoppingCart()
         {
             var cart = GetCart();
@@ -96,6 +85,23 @@ namespace MusicStoreSite.Controllers
             var cart = GetCart();
             cart.RemoveItem(productId);
             return View("ShoppingCart", cart);
+        }
+
+        [Authorize]
+        public ActionResult CheckoutScreen()
+        {
+            return View();
+        }
+
+        ShoppingCart GetCart()
+        {
+            var cart = (ShoppingCart)Session["Cart"];
+            if (cart == null)
+            {
+                cart = new ShoppingCart();
+                Session["Cart"] = cart;
+            }
+            return cart;
         }
 
         string RenderRazorViewToString(string viewName, object model)
