@@ -191,6 +191,11 @@
     </Compile>
     <Compile Include="Infrastructure\AdminAuthorizationAttribute.cs" />
     <Compile Include="Infrastructure\DecimalModelBinder.cs" />
+    <Compile Include="Migrations\201409040957304_ImageToProduct.cs" />
+    <Compile Include="Migrations\201409040957304_ImageToProduct.Designer.cs">
+      <DependentUpon>201409040957304_ImageToProduct.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Abstract\IProductRepository.cs" />
     <Compile Include="Models\AccountModels.cs" />
     <Compile Include="Models\Concrete\ProductRepo.cs" />
@@ -303,7 +308,6 @@
     <Content Include="Scripts\knockout-2.2.0.js" />
     <Content Include="Scripts\modernizr-2.6.2.js" />
     <Content Include="Scripts\offcanvas.js" />
-    <Content Include="Scripts\refreshCart.js" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -347,7 +351,6 @@
     <Content Include="Views\Store\Browse.cshtml" />
     <Content Include="Views\Store\AddProductDialog.cshtml" />
     <Content Include="Views\Store\CartMiniInfo.cshtml" />
-    <Content Include="Views\Shared\Index.cshtml" />
     <Content Include="Views\Shared\CategoryList.cshtml">
       <SubType>Code</SubType>
     </Content>
@@ -362,8 +365,8 @@
     <Content Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201409040756182_ProductGenre.resx">
-      <DependentUpon>201409040756182_ProductGenre.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201409040957304_ImageToProduct.resx">
+      <DependentUpon>201409040957304_ImageToProduct.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
