@@ -48,10 +48,13 @@ div.newProducts div.product {
     margin: 5px;
 }
 
-.loginFieldLabel {
+.loginFieldLabel, .orderFieldLabel {
     min-width: 120px;
 }
 
+.orderFieldLabel {
+    min-height: 30px;
+}
 .navbar-nav {
     float: right;
 }
