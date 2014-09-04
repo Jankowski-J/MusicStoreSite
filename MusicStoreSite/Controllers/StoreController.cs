@@ -99,6 +99,11 @@ namespace MusicStoreSite.Controllers
             return View("ShoppingCart", cart);
         }
 
+        public ActionResult AccessDenied()
+        {
+            return View();
+        }
+
         [Authorize]
         public ActionResult CheckoutScreen()
         {
