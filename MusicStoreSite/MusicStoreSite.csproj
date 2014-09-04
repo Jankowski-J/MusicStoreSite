@@ -195,6 +195,7 @@
     <Compile Include="Models\AccountModels.cs" />
     <Compile Include="Models\Concrete\ProductRepo.cs" />
     <Compile Include="Models\Contexts\MusicStoreContext.cs" />
+    <Compile Include="Models\Entities\Order.cs" />
     <Compile Include="Models\Entities\Product.cs" />
     <Compile Include="Models\Entities\ShoppingCart.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
