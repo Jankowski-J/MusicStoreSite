@@ -12,16 +12,21 @@
         {
             @:<tr>
         }
-        <td>
-            <div class="browsedItem">
-                <img class="thumbnail" src="@Url.Content("~/Content/Images/placeholder.gif")" alt="Image" />
-                <span style="display: block; text-align: center">
-                    <a href="@Url.Action("ProductDetails", new { id = product.ProductId})">
-                              <b>@product.Artist</b><br/>
-                              <i>@product.Title</i>
-                    </a>
-                </span> 
-            </div>
+        <td class="browsedItem" style="text-align: center;">
+            @if (product.CoverLocation != null)
+            {
+                <img class='thumbnail album-cover-min' src="@Url.Content("~/Content/Images/AlbumCovers/" + product.CoverLocation)" alt="Image" />
+            }
+            else
+            {
+                <img class='thumbnail album-cover-min' src="@Url.Content("~/Content/Images/placeholder.gif")" alt="Image" />
+            }
+            <span style="display: block; text-align: center">
+                <a href="@Url.Action("ProductDetails", new { id = product.ProductId})">
+                    <b>@product.Artist</b><br/>
+                    <i>@product.Title</i>
+                </a>
+            </span> 
         </td>
         if (i%5 == 4)
         {

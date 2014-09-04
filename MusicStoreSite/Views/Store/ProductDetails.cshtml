@@ -5,7 +5,14 @@
 
 <div>
     <p>
-        <img class='thumbnail' src="@Url.Content("~/Content/Images/placeholder.gif")" alt="Image" />
+        @if (Model.CoverLocation != null)
+        {
+            <img class='thumbnail album-cover-min' src="@Url.Content("~/Content/Images/AlbumCovers/" + Model.CoverLocation)" alt="Image" />
+        }
+        else
+        {
+            <img class='thumbnail album-cover-min' src="@Url.Content("~/Content/Images/placeholder.gif")" alt="Image" />
+        }
     </p>
 </div>
 <div class="productFields">

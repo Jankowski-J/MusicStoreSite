@@ -19,7 +19,14 @@ else
         @foreach (var product in @Model)
         {
             <div class="col-md-2 product">
-                <img class='thumbnail' src="@Url.Content("~/Content/Images/placeholder.gif")" alt="Image" />
+                @if (product.CoverLocation != null)
+                {
+                    <img class='thumbnail album-cover-min' src="@Url.Content("~/Content/Images/AlbumCovers/" + product.CoverLocation)" alt="Image" />
+                }
+                else
+                {
+                    <img class='thumbnail album-cover-min' src="@Url.Content("~/Content/Images/placeholder.gif")" alt="Image" />
+                }
                 @Html.ActionLink(product.Title, "ProductDetails", new { id = product.ProductId })
             </div>
         }

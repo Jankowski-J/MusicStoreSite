@@ -361,6 +361,7 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Areas\Panel\Models\" />
+    <Folder Include="Content\Images\AlbumCovers\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />

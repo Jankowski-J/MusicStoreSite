@@ -6,7 +6,8 @@
 
 <h2>Edit</h2>
 
-@using (Html.BeginForm()) {
+@using (Html.BeginForm("Edit", "Admin", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
     @Html.AntiForgeryToken()
     @Html.ValidationSummary(true)
 
@@ -44,10 +45,23 @@
             @Html.TextBoxFor(model => model.Price)
             @Html.ValidationMessageFor(model => model.Price)
         </div>
+        <div class="editor-label">
+            @Html.Label("Upload Cover Image")
+        </div>
+        @if (Model.CoverLocation != null)
+        {
+            <img class='thumbnail album-cover-min' src="@Url.Content("~/Content/Images/AlbumCovers/" + Model.CoverLocation)" alt="Image" />
+        }
+        <div class="editor-field">
+            <input type="file" name="albumCover" id="albumCover"/>
+        </div>
+        @Html.HiddenFor(model => model.CoverLocation)
 
         <p>
             <input type="submit" value="Save" />
         </p>
+        @Html.HiddenFor(model => model.CoverLocation)
+
     </fieldset>
 }
 

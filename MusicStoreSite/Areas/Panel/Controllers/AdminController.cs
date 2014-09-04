@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Data;
 using System.Data.Entity;
+using System.IO;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
@@ -42,10 +43,26 @@ namespace MusicStoreSite.Areas.Panel.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create(Product product)
+        public ActionResult Create(Product product, HttpPostedFileBase albumCover)
         {
             if (ModelState.IsValid)
             {
+                if (albumCover != null && albumCover.ContentLength > 0)
+                    try
+                    {
+                        string path = Server.MapPath("~/Content/Images/AlbumCovers") + '\\' + product.Artist + '_' + product.Title + '_' + product.AddedAt.ToString("dd_MM_yyyy") + ".jpg";
+                        albumCover.SaveAs(path);
+                        product.CoverLocation = product.Artist + '_' + product.Title + '_' + product.AddedAt.ToString("dd_MM_yyyy") + ".jpg";
+                        ViewBag.Message = "File uploaded successfully";
+                    }
+                    catch (Exception ex)
+                    {
+                        ViewBag.Message = "ERROR:" + ex.Message.ToString();
+                    }
+                else
+                {
+                    ViewBag.Message = "You have not specified a file.";
+                } 
                 db.Products.Add(product);
                 db.SaveChanges();
                 return RedirectToAction("Index");
@@ -72,10 +89,26 @@ namespace MusicStoreSite.Areas.Panel.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit(Product product)
+        public ActionResult Edit(Product product, HttpPostedFileBase albumCover)
         {
             if (ModelState.IsValid)
             {
+                if (albumCover != null && albumCover.ContentLength > 0)
+                    try
+                    {
+                        string path = Server.MapPath("~/Content/Images/AlbumCovers") + '\\' + product.Artist + '_' + product.Title + '_' + product.AddedAt.ToString("dd_MM_yyyy") + ".jpg";
+                        albumCover.SaveAs(path);
+                        product.CoverLocation = product.Artist + '_' + product.Title + '_' + product.AddedAt.ToString("dd_MM_yyyy") + ".jpg";
+                        ViewBag.Message = "File uploaded successfully";
+                    }
+                    catch (Exception ex)
+                    {
+                        ViewBag.Message = "ERROR:" + ex.Message.ToString();
+                    }
+                else
+                {
+                    ViewBag.Message = "You have not specified a file.";
+                }
                 db.Entry(product).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");

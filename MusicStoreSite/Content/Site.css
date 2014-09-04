@@ -44,8 +44,8 @@ div.newProducts div.product {
 }
 
 .browsedItem {
-    width: 120px;
-    margin: 5px;
+    width: 130px;
+    margin: 10px;
 }
 
 .loginFieldLabel, .orderFieldLabel {
@@ -82,4 +82,10 @@ span.title {
     font-size: 18px;
     line-height: 20px;
     margin-left: -15px;
+}
+
+.album-cover-min {
+    width: 100px;
+    height: 100px;
+    margin: 0 10px;
 }
