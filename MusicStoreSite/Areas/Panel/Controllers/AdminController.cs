@@ -20,6 +20,10 @@ namespace MusicStoreSite.Areas.Panel.Controllers
 
         public ActionResult Index()
         {
+            if (!Request.IsAuthenticated)
+            {
+                return View("Error");
+            }
             return View(db.Products.ToList());
         }
 
