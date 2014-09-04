@@ -1,0 +1,14 @@
+﻿@{
+    ViewBag.Title = "OrderInfo";
+}
+
+@if (ViewBag.OrderIndex != null)
+{
+    <h3 class="success">Your order number is: @ViewBag.OrderIndex</h3>
+}
+else
+{
+    <h3>Generaing Your order failed. Pease try again later.</h3>         
+}
+
+<div class="btn btn-lg">@Html.ActionLink("Go back to store", "Index", "Store")</div>
