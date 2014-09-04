@@ -54,9 +54,9 @@ namespace MusicStoreSite.Controllers
         {
             if (poductId == null)
             {
-                ViewBag.ErrorIndex = 403;
+                ViewBag.ErrorCode = 403;
+                ViewBag.ErrorMessage = "No productId was specified in request";
                 return View("Error");
-                //throw new HttpException(403, "No productId was specified in request");
             }
             var cart = GetCart();
             ViewBag.Message= "ERROR";
