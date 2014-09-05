@@ -27,7 +27,12 @@ else
                 {
                     <img class='thumbnail album-cover-min' src="@Url.Content("~/Content/Images/placeholder.gif")" alt="Image" />
                 }
-                @Html.ActionLink(product.Title, "ProductDetails", new { id = product.ProductId })
+                <span style="display: block; text-align: center">
+                    <a href="@Url.Action("ProductDetails", new { id = product.ProductId})">
+                        <b>@product.Artist</b><br/>
+                        <i>@product.Title</i>
+                    </a>
+                </span> 
             </div>
         }
     </div>
