@@ -44,5 +44,7 @@ namespace MusicStoreSite.Models.Entities
 
         [Required]
         public decimal TotalPrice { get; set; }
+
+        public virtual ICollection<OrderItem> OrderItemsList { get; set; }
     }
 }
