@@ -122,20 +122,18 @@ namespace MusicStoreSite.Controllers
 
                 musicStoreContext.Orders.Add(order);
 
-                musicStoreContext.SaveChanges();
-
-                orderIndex = order.OrderId;
-
                 List<OrderItem> items = new List<OrderItem>();
+
+                order.OrderItemsList = new List<OrderItem>();
 
                 foreach (var item in GetCart().Products)
                 {
-                    musicStoreContext.OrderItems.Add(new OrderItem() { OrderId = (int)orderIndex, ProductId = item.Product.ProductId, Quantity = item.Quantity });
+                    order.OrderItemsList.Add(new OrderItem() { ProductId = item.Product.ProductId, Quantity = item.Quantity });
                 }
 
-                musicStoreContext.Orders.Where(o => o.OrderId == order.OrderId).FirstOrDefault().TotalPrice = order.TotalPrice;
+                order.TotalPrice = GetCart().Products.Sum(item => item.Quantity * item.Product.Price);
                 musicStoreContext.SaveChanges();
-
+                orderIndex = order.OrderId;
                 ViewBag.OrderIndex = orderIndex;
 
                 Session["Cart"] = new ShoppingCart();
