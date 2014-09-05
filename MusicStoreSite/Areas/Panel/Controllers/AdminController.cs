@@ -143,9 +143,17 @@ namespace MusicStoreSite.Areas.Panel.Controllers
             return RedirectToAction("Index");
         }
 
-        public ActionResult GetGenres()
+        public ActionResult GetGenres(int? selectedGenre = null)
         {
-            return PartialView("_GenresDropDown", db.Genres);
+            if (selectedGenre == null)
+            {
+                return PartialView("_GenresDropDown", db.Genres);
+            }
+            else
+            {
+                ViewBag.SelectedGenre = selectedGenre.Value;
+                return PartialView("_GenresDropDownPreselected", db.Genres);
+            }
         }
 
         protected override void Dispose(bool disposing)

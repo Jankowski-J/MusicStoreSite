@@ -18,5 +18,7 @@ namespace MusicStoreSite.Models.Entities
 
         [Required]
         public int Quantity { get; set; }
+
+        public virtual Order Order { get; set; }
     }
 }
