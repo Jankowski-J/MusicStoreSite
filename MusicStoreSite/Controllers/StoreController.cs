@@ -128,21 +128,21 @@ namespace MusicStoreSite.Controllers
 
                 List<OrderItem> items = new List<OrderItem>();
 
-                foreach (var item in GetCart().Products)
-                {
-                    var orderItem = new OrderItem() { OrderId = (int)orderIndex, ProductId = item.ProductId, Quantity = 1 };
+                //foreach (var item in GetCart().Products)
+                //{
+                //    var orderItem = new OrderItem() { OrderId = (int)orderIndex, ProductId = item.ProductId, Quantity = 1 };
 
-                    var foundItem = items.Find(i => i.OrderId == orderIndex && i.ProductId == item.ProductId);
-                    if (foundItem != null)
-                    {
-                        foundItem.Quantity++;
-                    }
-                    else
-                    {
-                        items.Insert(0, orderItem);
-                    }
-                    order.TotalPrice += item.Price;
-                }
+                //    var foundItem = items.Find(i => i.OrderId == orderIndex && i.ProductId == item.ProductId);
+                //    if (foundItem != null)
+                //    {
+                //        foundItem.Quantity++;
+                //    }
+                //    else
+                //    {
+                //        items.Insert(0, orderItem);
+                //    }
+                //    order.TotalPrice += item.Price;
+                //}
 
                 foreach (var item in items)
                 {

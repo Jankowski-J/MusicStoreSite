@@ -7,7 +7,7 @@ namespace MusicStoreSite.Models.Entities
 {
     public class ShoppingCart
     {
-        readonly List<Product> _products = new List<Product>();
+        readonly List<CartItem> _products = new List<CartItem>();
 
         public void AddItem(Product product)
         {
@@ -15,17 +15,34 @@ namespace MusicStoreSite.Models.Entities
             {
                 return;
             }
-            _products.Add(product);
-        }  
+
+            var foundItem = _products.Find(p => p.Product.ProductId == product.ProductId);
+            if (foundItem != null)
+            {
+                foundItem.Quantity++;
+            }
+            else
+            {
+                _products.Add(new CartItem() { Product = product, Quantity = 1 });
+            }
+        }
 
         public void RemoveItem(int productId)
         {
-            var productToRemove = _products.Where(x => x.ProductId == productId).FirstOrDefault();
+            var productToRemove = _products.Where(x => x.Product.ProductId == productId).FirstOrDefault();
             if (productToRemove == null)
             {
                 return;
             }
-            _products.Remove(productToRemove);
+
+            if (productToRemove.Quantity > 1)
+            {
+                productToRemove.Quantity--;
+            }
+            else
+            {
+                _products.Remove(productToRemove);
+            }
         }
 
         public void ClearCart()
@@ -33,7 +50,7 @@ namespace MusicStoreSite.Models.Entities
             _products.Clear();
         }
 
-        public IEnumerable<Product> Products
+        public IEnumerable<CartItem> Products
         {
             get { return _products; }
         }

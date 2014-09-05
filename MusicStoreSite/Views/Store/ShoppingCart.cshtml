@@ -13,30 +13,23 @@
         <th style="text-align: right">Price</th>
         <th style="text-align: right">Quantity</th>
     </tr>
-    @foreach (var item in Model.Products.GroupBy(x => x.ProductId)
-        .Select(product => new
-        {
-            Id = product.Key,
-            Price = product.Select(x => x.Price).Last(),
-            Quantity = product.Count(),
-            Name = product.Select(x => x.Artist + " - " + x.Title).Last()
-        }))
+    @foreach (var item in Model.Products)
     {
         <tr>
             <td>
-                @item.Name
+                @item.Product.Title
             </td>
             <td style="text-align: right">
-                @item.Price
+                @item.Product.Price
             </td>
             <td style="text-align: right">
                 @item.Quantity
             </td>
             <td>
-                @Html.ActionLink("Remove from cart", "RemoveFromCart", new {productId = item.Id})
+                @Html.ActionLink("Remove from cart", "RemoveFromCart", new {productId = item.Product.ProductId})
             </td>
         </tr>
-        sum += item.Price * item.Quantity;
+        sum += item.Product.Price * item.Quantity;
     }
     <tr>
         <td><b>Total</b></td>
@@ -45,7 +38,5 @@
 </table>
 @if (Model.Products.Any())
 {
-    @Html.ActionLink("Checkout", "CheckoutScreen", "Store", new {@class = "btn btn-lg btn-success"})
+    @Html.ActionLink("Checkout", "CheckoutScreen", "Store", new { @class = "btn btn-lg btn-success" })
 }
-
-
