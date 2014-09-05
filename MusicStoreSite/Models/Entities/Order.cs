@@ -30,6 +30,7 @@ namespace MusicStoreSite.Models.Entities
 
         [Required]
         [Display(Name = "Postal Code")]
+        [RegularExpression(@"^[0-9A-Za-z\-]", ErrorMessage = "Invalid Postal Code.")]
         public string PostalCode { get; set; }
 
         [Required]
@@ -40,6 +41,7 @@ namespace MusicStoreSite.Models.Entities
 
         [Required]
         [Display(Name = "Email Address")]
+        [RegularExpression(@"^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$", ErrorMessage="Please enter a valid email in format: login@provider")]
         public string Email { get; set; }
 
         [Required]
