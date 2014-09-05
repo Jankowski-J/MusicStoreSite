@@ -83,7 +83,6 @@ namespace MusicStoreSite.Controllers
                     WebSecurity.CreateUserAndAccount(model.UserName, model.Password, new { Email = model.Email });
                     WebSecurity.Login(model.UserName, model.Password);
                     return RedirectToLocal(returnUrl);
-                   // return RedirectToAction("Index", "Store");
                 }
                 catch (MembershipCreateUserException e)
                 {
