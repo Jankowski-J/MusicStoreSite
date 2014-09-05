@@ -98,10 +98,17 @@ namespace MusicStoreSite.Areas.Panel.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            Genre genre = db.Genres.Find(id);
-            db.Genres.Remove(genre);
-            db.SaveChanges();
-            return RedirectToAction("Index");
+            try
+            {
+                Genre genre = db.Genres.Find(id);
+                db.Genres.Remove(genre);
+                db.SaveChanges();
+                return RedirectToAction("Index");
+            }
+            catch (Exception ex)
+            {
+                return View("Error");
+            }
         }
 
         protected override void Dispose(bool disposing)
