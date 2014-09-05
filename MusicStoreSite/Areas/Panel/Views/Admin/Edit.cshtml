@@ -51,17 +51,17 @@
         </div>
         @if (Model.CoverLocation != null)
         {
-            <img class='thumbnail album-cover-min' src="@Url.Content("~/Content/Images/AlbumCovers/" + Model.CoverLocation)" alt="Image" />
+            <img class='thumbnail album-cover-min' src="@Url.Content("~/Content/Images/AlbumCovers/" + Model.CoverLocation)" alt="Image" id="albumCoverImage"/>
+            <input type="button" id="removeAlbumCover" value="Remove Picture"/>
         }
         <div class="editor-field">
-            <input type="file" name="albumCover" id="albumCover"/>
+            <input type="file" name="albumCover" id="albumCover"/><input type="button" id="clearAlbumCover" value="Cancel Picture"/>
+            @ViewBag.Message
         </div>
         @Html.HiddenFor(model => model.CoverLocation)
-
         <p>
             <input type="submit" value="Save" />
         </p>
-        @Html.HiddenFor(model => model.CoverLocation)
 
     </fieldset>
 }
@@ -70,6 +70,20 @@
     @Html.ActionLink("Back to List", "Index")
 </div>
 
+<script>
+    window.onload = function ()
+    {
+        $("#clearAlbumCover").on("click", function() {
+            var albumCover = $("#albumCover");
+            albumCover.replaceWith(albumCover.val('').clone(true));
+        });
+        $("#removeAlbumCover").on("click", function() {
+            $("#CoverLocation").val('');
+            $("#albumCoverImage").remove();
+            this.remove();
+        });
+    }
+</script>
 @section Scripts {
     @Scripts.Render("~/bundles/jqueryval")
     <script src="~/Scripts/Panel/validation.js"></script>
