@@ -291,6 +291,7 @@
     <Content Include="Areas\Panel\Views\Genres\Delete.cshtml" />
     <Content Include="Areas\Panel\Views\Admin\_GenresDropDown.cshtml" />
     <Content Include="Areas\Panel\Views\Admin\_GenresDropDownPreselected.cshtml" />
+    <Content Include="Areas\Panel\Views\Genres\Error.cshtml" />
     <None Include="Scripts\jquery-1.9.1.intellisense.js" />
     <Content Include="Scripts\AddProductDialog.js" />
     <Content Include="Scripts\bootstrap.js" />
