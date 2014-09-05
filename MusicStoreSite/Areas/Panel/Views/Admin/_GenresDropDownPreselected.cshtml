@@ -1,0 +1,13 @@
+﻿@model IEnumerable<MusicStoreSite.Models.Entities.Genre>
+
+<select id="GenreId" name="GenreId">
+    @foreach (var genre in Model)
+    {
+        @: <option value="@genre.GenreId"
+            if(ViewBag.SelectedGenre == genre.GenreId)
+            {
+                @: selected    
+            }
+        @: >@genre.Name</option>
+    }
+</select> 
