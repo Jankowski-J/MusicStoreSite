@@ -51,9 +51,9 @@ namespace MusicStoreSite.Areas.Panel.Controllers
                 if (albumCover != null && albumCover.ContentLength > 0)
                     try
                     {
-                        string path = Server.MapPath("~/Content/Images/AlbumCovers") + '\\' + product.Artist + '_' + product.Title + '_' + product.AddedAt.ToString("dd_MM_yyyy") + ".jpg";
+                        string path = Server.MapPath("~/Content/Images/AlbumCovers") + '\\' + product.Artist + '_' + product.Title + '_' + product.AddedAt.ToString("dd_MM_yyyy") + Path.GetExtension(albumCover.FileName);
                         albumCover.SaveAs(path);
-                        product.CoverLocation = product.Artist + '_' + product.Title + '_' + product.AddedAt.ToString("dd_MM_yyyy") + ".jpg";
+                        product.CoverLocation = product.Artist + '_' + product.Title + '_' + product.AddedAt.ToString("dd_MM_yyyy") + Path.GetExtension(albumCover.FileName);
                         ViewBag.Message = "File uploaded successfully";
                     }
                     catch (Exception ex)
@@ -97,9 +97,9 @@ namespace MusicStoreSite.Areas.Panel.Controllers
                 if (albumCover != null && albumCover.ContentLength > 0)
                     try
                     {
-                        string path = Server.MapPath("~/Content/Images/AlbumCovers") + '\\' + product.Artist + '_' + product.Title + '_' + product.AddedAt.ToString("dd_MM_yyyy") + ".jpg";
+                        string path = Server.MapPath("~/Content/Images/AlbumCovers") + '\\' + product.Artist + '_' + product.Title + '_' + product.AddedAt.ToString("dd_MM_yyyy") + Path.GetExtension(albumCover.FileName);
                         albumCover.SaveAs(path);
-                        product.CoverLocation = product.Artist + '_' + product.Title + '_' + product.AddedAt.ToString("dd_MM_yyyy") + ".jpg";
+                        product.CoverLocation = product.Artist + '_' + product.Title + '_' + product.AddedAt.ToString("dd_MM_yyyy") + Path.GetExtension(albumCover.FileName);
                         ViewBag.Message = "File uploaded successfully";
                     }
                     catch (Exception ex)
