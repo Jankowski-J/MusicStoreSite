@@ -80,8 +80,8 @@ namespace MusicStoreSite.Models
         public string ConfirmPassword { get; set; }
 
         [Required]
-        [DataType(DataType.EmailAddress)]
-        [Display(Name = "Email address")]
+        [Display(Name = "Email Address")]
+        [RegularExpression(@"^([\w\.\-]+)@([\w\-]+)((\.(\w){2,3})+)$", ErrorMessage = "Please enter a valid email in format: login@provider")]
         public string Email { get; set; }
 
     }
