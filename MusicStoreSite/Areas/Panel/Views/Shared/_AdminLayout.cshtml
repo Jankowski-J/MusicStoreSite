@@ -55,9 +55,11 @@
 
     </div>
     <!--/.container-->
+    
+    
+    @Scripts.Render("~/bundles/jquery")
     <script src="~/Scripts/jquery-ui-1.8.24.min.js"></script>
     <script src="~/Scripts/jquery.unobtrusive-ajax.js"></script>
-    @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")
     @RenderSection("scripts", required: false)
 </body>

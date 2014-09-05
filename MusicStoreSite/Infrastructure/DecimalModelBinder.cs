@@ -17,8 +17,8 @@ namespace MusicStoreSite.Infrastructure
             object actualValue = null;
             try
             {
-                actualValue = Convert.ToDecimal(valueResult.AttemptedValue,
-                    CultureInfo.CurrentCulture);
+                actualValue = Convert.ToDecimal(valueResult.AttemptedValue.Replace('.', ','),
+                    CultureInfo.GetCultureInfo("pl"));
             }
             catch (FormatException e)
             {
