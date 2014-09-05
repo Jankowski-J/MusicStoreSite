@@ -1,7 +1,8 @@
 ﻿@model MusicStoreSite.Models.Entities.ShoppingCart
 
 @{
-    var message = "Your Cart:" + Model.Products.Count().ToString() + " item(s)";
+    int count = Model.Products.Sum(item => item.Quantity);
+    var message = "Your Cart:" + count.ToString() + " item(s)";
 }
 
 @Html.ActionLink(message, "ShoppingCart","Store")
