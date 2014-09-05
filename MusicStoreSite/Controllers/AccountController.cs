@@ -62,7 +62,7 @@ namespace MusicStoreSite.Controllers
         // GET: /Account/Register
 
         [AllowAnonymous]
-        public ActionResult Register()
+        public ActionResult Register(string returnUrl)
         {
             return View();
         }
@@ -73,16 +73,17 @@ namespace MusicStoreSite.Controllers
         [HttpPost]
         [AllowAnonymous]
         [ValidateAntiForgeryToken]
-        public ActionResult Register(RegisterModel model)
+        public ActionResult Register(RegisterModel model, string returnUrl)
         {
             if (ModelState.IsValid)
             {
                 // Attempt to register the user
                 try
                 {
-                    WebSecurity.CreateUserAndAccount(model.UserName, model.Password, new { Email = model.Email});
+                    WebSecurity.CreateUserAndAccount(model.UserName, model.Password, new { Email = model.Email });
                     WebSecurity.Login(model.UserName, model.Password);
-                    return RedirectToAction("Index", "Store");
+                    return RedirectToLocal(returnUrl);
+                   // return RedirectToAction("Index", "Store");
                 }
                 catch (MembershipCreateUserException e)
                 {

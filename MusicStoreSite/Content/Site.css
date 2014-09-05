@@ -89,3 +89,7 @@ span.title {
     height: 100px;
     margin: 0 10px;
 }
+
+.field-validation-error {
+    color: #ff0000;
+}
