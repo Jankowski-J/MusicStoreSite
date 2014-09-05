@@ -15,11 +15,7 @@ namespace MusicStoreSite.Models.Contexts
         {
         }
 
-        protected override void OnModelCreating(DbModelBuilder modelBuilder)
-        {
-            modelBuilder.Entity<Order>().HasMany(o => o.OrderItemsList).WithRequired();
-            base.OnModelCreating(modelBuilder);
-        }
+        
         public DbSet<UserProfile> UserProfiles { get; set; }
         public DbSet<Product> Products { get; set; }
         public DbSet<Genre> Genres { get; set; }
